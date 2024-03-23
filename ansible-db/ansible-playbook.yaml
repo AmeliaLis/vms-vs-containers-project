@@ -5,7 +5,8 @@
   gather_facts: false
   tasks:
     - name: Start VM1
-      ansible.windows.win_command: VBoxManage startVM db-machine-1 --type headless
+      ansible.windows.win_command:
+        cmd: VBoxManage startVM db-machine-1 --type headless
     
     - name: Start VM2
       ansible.windows.win_command: VBoxManage startVM db-machine-2 --type headless

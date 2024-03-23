@@ -4,6 +4,6 @@
   tasks:
     - name: Start VirtualBox VM
       win_shell: |
-        "VBoxManage" startvm "db-machine-1" --type headless
+        "VBoxManage" startvm db-machine-1 --type headless
       args:
         executable: powershell.exe

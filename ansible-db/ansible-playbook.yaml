@@ -1,20 +1,20 @@
 ---
 - name: Start Oracle VMS
-hosts: virtualbox-host
-tasks:
-    - name: Start VM1
-    command: VBoxManage startVM db-machine-1 --type headless
-    - name: Start VM2
-    command: VBoxManage startVM db-machine-2 --type headless
-    - name: Start VM3
-    command: VBoxManage startVM db-machine-3 --type headless
-    - name: Start VM4
-    command: VBoxManage startVM db-machine-4 --type headless
+  hosts: virtualbox-host
+  tasks:
+      - name: Start VM1
+        command: VBoxManage startVM db-machine-1 --type headless
+      - name: Start VM2
+        command: VBoxManage startVM db-machine-2 --type headless
+      - name: Start VM3
+        command: VBoxManage startVM db-machine-3 --type headless
+      - name: Start VM4
+        command: VBoxManage startVM db-machine-4 --type headless
 ---
 - name: Run echo command on VM
-hosts: dbserver
-become: true
-become_method: sudo
-tasks:
-    - name: Execute echo command
-    command: echo 'Hello, world'
+  hosts: dbserver
+  become: true
+  become_method: sudo
+  tasks:
+      - name: Execute echo command
+        command: echo 'Hello, world'

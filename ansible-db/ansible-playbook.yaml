@@ -3,10 +3,7 @@
   hosts: windows
   become: false
   gather_facts: false
-  tasks:
-    - name: test connection
-      ansible.windows.win_ping:
-    
+  tasks:    
     - name: test connection 2
       ansible.builtin.ping:
     

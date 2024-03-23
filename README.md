@@ -104,6 +104,11 @@ Hosts:
 
 NEXT:
 - figure out github repo and file management
+
+1. generate ssh key 
+2. copy public key with winscp tool
+3. add key to github profile
+
 - create playbook to Start all of the VMs by Name?
 - edit playbook to start database
 - edit playbook to execute sql from file downloaded from github

@@ -3,10 +3,7 @@
   hosts: windows
   become: false
   gather_facts: false
-  tasks:    
-    - name: test connection 2
-      ansible.builtin.ping:
-    
+  tasks:
     - name: Start VM1
       command: VBoxManage startVM db-machine-1 --type headless
     

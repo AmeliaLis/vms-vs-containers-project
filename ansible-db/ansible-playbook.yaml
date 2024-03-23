@@ -11,4 +11,3 @@
     - name: Run PowerShell script
       win_shell: |
         powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\start_vm.ps1"
-      when: copy_result.changed

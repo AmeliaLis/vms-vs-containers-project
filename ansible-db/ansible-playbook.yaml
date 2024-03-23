@@ -14,12 +14,4 @@
       ansible.windows.win_command: VBoxManage startVM db-machine-3 --type headless
     
     - name: Start VM4
-      ansible.windows.win_command: VBoxManage startVM db-machine-4 --type headless  
-
-- name: Run echo command on VM
-  hosts: dbserver
-  become: true
-  become_method: sudo
-  tasks:
-    - name: Execute echo command
-      command: echo 'Hello, world'
+      ansible.windows.win_command: VBoxManage startVM db-machine-4 --type headless 

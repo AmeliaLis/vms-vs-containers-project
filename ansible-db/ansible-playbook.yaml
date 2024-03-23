@@ -10,7 +10,7 @@
         command: VBoxManage startVM db-machine-3 --type headless
       - name: Start VM4
         command: VBoxManage startVM db-machine-4 --type headless
----
+
 - name: Run echo command on VM
   hosts: dbserver
   become: true

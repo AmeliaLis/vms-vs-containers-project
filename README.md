@@ -15,7 +15,7 @@
 network:
   version: 2
   ethernets:
-    enp0s3:    # Replace eth0 with your network interface name
+    enp0s3:
       dhcp4: no
       addresses:
         - 192.168.0.115/24
@@ -27,7 +27,7 @@ network:
 network:
   version: 2
   ethernets:
-    enp0s3:    # Replace eth0 with your network interface name
+    enp0s3:     
       dhcp4: no
       addresses:
         - 192.168.0.116/24
@@ -39,7 +39,7 @@ network:
 network:
   version: 2
   ethernets:
-    enp0s3:    # Replace eth0 with your network interface name
+    enp0s3:
       dhcp4: no
       addresses:
         - 192.168.0.117/24
@@ -51,7 +51,7 @@ network:
 network:
   version: 2
   ethernets:
-    enp0s3:    # Replace eth0 with your network interface name
+    enp0s3:
       dhcp4: no
       addresses:
         - 192.168.0.118/24
@@ -63,7 +63,7 @@ network:
 network:
   version: 2
   ethernets:
-    enp0s3:    # Replace eth0 with your network interface name
+    enp0s3:
       dhcp4: no
       addresses:
         - 192.168.0.119/24
@@ -75,11 +75,21 @@ network:
 8. `apt-get install git`
 
 
-## Next steps
 
-0. Try to set up VM5 and install ansible to manage all of the hosts
+### Configuring ansible host
 
-Playbook:
+1. generate ssh key on ansible host
+2. copy public key with winscp tool
+3. add key to github profile
+4. configure windows host to start vms:
+    - https://www.ansible.com/blog/connecting-to-a-windows-host
+    - https://www.youtube.com/watch?v=-vPXS8UuJoI
+    - https://www.ansiblepilot.com/articles/configure-a-windows-host-for-ansible-ansible-winrm/
+    - https://docs.ansible.com/ansible/latest/os_guide/windows_setup.html
+    - https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui
+    - https://forums.virtualbox.org/viewtopic.php?t=104814
+
+Sample Playbook:
 ```
 - name: Run echo command on VM
   hosts: dbserver
@@ -90,7 +100,7 @@ Playbook:
       ansible_password: admin123
   tasks:
       - name: Execute echo command
-      command: echo 'Hello, worldl
+      command: echo 'Hello, world'
 ```
 
 Hosts:
@@ -98,18 +108,12 @@ Hosts:
 [dbserver]
 192.168.0.118
 ```
+Run playbook:
 
 `ansible-playbook playbook.yml -i inventory.ini --extra-vars "ansible_sudo_pass=yourPassword"`
 
-
-NEXT:
-- figure out github repo and file management
-
-1. generate ssh key 
-2. copy public key with winscp tool
-3. add key to github profile
-
-- create playbook to Start all of the VMs by Name?
+## Next steps
+- configure mysql
 - edit playbook to start database
 - edit playbook to execute sql from file downloaded from github
 

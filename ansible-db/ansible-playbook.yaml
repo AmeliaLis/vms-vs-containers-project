@@ -1,17 +1,9 @@
----
 - name: Start Oracle VMS
   hosts: windows
-  become: false
-  gather_facts: false
+  gather_facts: no
   tasks:
-    - name: Start VM1
-      ansible.windows.win_shell: VBoxManage startVM db-machine-1 --type headless
-    
-    - name: Start VM2
-      ansible.windows.win_command: VBoxManage startVM db-machine-2 --type headless
-    
-    - name: Start VM3
-      ansible.windows.win_command: VBoxManage startVM db-machine-3 --type headless
-    
-    - name: Start VM4
-      ansible.windows.win_command: VBoxManage startVM db-machine-4 --type headless 
+    - name: Start VirtualBox VM
+      win_shell: |
+        "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" startvm "db-machine-1" --type headless
+      args:
+        executable: powershell.exe

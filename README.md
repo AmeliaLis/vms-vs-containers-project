@@ -88,6 +88,7 @@ network:
     - https://docs.ansible.com/ansible/latest/os_guide/windows_setup.html
     - https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui
     - https://forums.virtualbox.org/viewtopic.php?t=104814
+5. mysql has been configured by ansible playbook
 
 Sample Playbook:
 ```
@@ -113,11 +114,9 @@ Run playbook:
 `ansible-playbook playbook.yml -i inventory.ini --extra-vars "ansible_sudo_pass=yourPassword"`
 
 ## Next steps
-- configure mysql
-- edit playbook to start database
 - edit playbook to execute sql from file downloaded from github
 
-1. Configure mysql on VM1
+1. Configure mysql on VM1 - DONE
 2. Configure postgress on VM2
 3. Configure oracle db on VM3
 4. Configure Microsoft SQL Server -> https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver16&tabs=ubuntu2004

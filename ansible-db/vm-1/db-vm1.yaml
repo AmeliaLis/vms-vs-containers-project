@@ -3,14 +3,13 @@
   gather_facts: no
   tasks:
     - name: Check if powershell script exists
-      stat:
-        path: C:\Users\DELL\workspace\vm1\start_vm1.ps1
+      win_stat:
+        path: "C:\\Users\\DELL\\workspace\\vm1\\start_vm1.ps1"
       register: script_file_stat
-      ignore_errors: yes
 
-    - name: Delete powershell script to pull the newest changes
+    - name: Delete PowerShell script to pull the newest changes
       win_file:
-        path: C:\Users\DELL\workspace\vm1\start_vm1.ps1
+        path: "C:\\Users\\DELL\\workspace\\vm1\\start_vm1.ps1"
         state: absent
       when: script_file_stat.stat.exists
 

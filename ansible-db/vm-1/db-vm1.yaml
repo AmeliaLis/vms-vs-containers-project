@@ -30,7 +30,7 @@
   tasks:
     - name: Download mysql files
       copy:
-        src: ~/bachelor/ansible-db/mysql-sakila-db/
+        src: ~/bachelor/ansible-db/vm-1/mysql-sakila-db/
         dest: /root/ansible-db/mysql-sakila-db
         owner: root
         group: root        

@@ -1,0 +1,1 @@
+VBoxManage startvm db-machine-3 --type headless

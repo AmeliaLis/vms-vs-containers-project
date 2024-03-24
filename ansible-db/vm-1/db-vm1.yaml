@@ -46,3 +46,44 @@
         owner: root
         group: root        
         mode: 0777
+
+    - name: Installing Mysql  and dependencies
+      package:
+        name: "{{item}}"
+        state: present
+        update_cache: yes
+      loop:
+        - mysql-server
+        - mysql-client
+        - python3-mysqldb
+        - libmysqlclient-dev
+      become: yes
+      
+    - name: start and enable mysql service
+      service:
+        name: mysql
+        state: started
+        enabled: yes
+
+    - name: creating mysql user (medium_post)
+      mysql_user:
+        name: amelia_user
+        password: amelia_user
+        priv: '*.*:ALL'
+        host: '%'
+        state: present
+    
+    - name: Enable remote login to mysql
+      lineinfile:
+        path: /etc/mysql/mysql.conf.d/mysqld.cnf
+        regexp: '^bind-address'
+        line: 'bind-address = 0.0.0.0'
+        backup: yes
+      notify:
+        - Restart mysql
+
+handlers:
+    - name: Restart mysql
+      service:
+        name: mysql
+        state: restarted

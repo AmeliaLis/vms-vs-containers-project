@@ -28,6 +28,17 @@
   gather_facts: no
   become: yes
   tasks:
+    - name: Check if MySQL files exist
+      stat:
+        path: "~/bachelor/ansible-db/vm-1/mysql-sakila-db/"
+      register: mysql_files_exist
+
+    - name: Delete PowerShell script to pull the newest changes
+      file:
+        path: "~/bachelor/ansible-db/vm-1/mysql-sakila-db/"
+        state: absent
+      when: mysql_files_exist.stat.exists
+
     - name: Download mysql files
       copy:
         src: ~/bachelor/ansible-db/vm-1/mysql-sakila-db/

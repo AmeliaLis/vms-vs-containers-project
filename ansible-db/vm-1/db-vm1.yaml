@@ -33,7 +33,7 @@
         path: "~/bachelor/ansible-db/vm-1/mysql-sakila-db/"
       register: mysql_files_exist
 
-    - name: Delete PowerShell script to pull the newest changes
+    - name: Delete MYSQL files to pull the newest changes
       file:
         path: "~/bachelor/ansible-db/vm-1/mysql-sakila-db/"
         state: absent
@@ -47,7 +47,7 @@
         group: root        
         mode: 0777
 
-    - name: Installing Mysql  and dependencies
+    - name: Installing Mysql and dependencies
       package:
         name: "{{item}}"
         state: present

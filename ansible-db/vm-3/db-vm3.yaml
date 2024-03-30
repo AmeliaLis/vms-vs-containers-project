@@ -16,3 +16,27 @@
     - name: Run PowerShell script
       win_shell: |
         powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm3\start_vm3.ps1"
+
+- name: Download files for oracle database
+  hosts: vm-2
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Check if Oracle files exist
+      stat:
+        path: "~/bachelor/ansible-db/vm-3/oracle-sakila-db/"
+      register: oracle_files_exist
+
+    - name: Delete PowerShell script to pull the newest changes
+      file:
+        path: "~/bachelor/ansible-db/vm-3/oracle-sakila-db"
+        state: absent
+      when: oracle_files_exist.stat.exists
+
+    - name: Download oracle files
+      copy:
+        src: ~/bachelor/ansible-db/vm-3/oracle-sakila-db
+        dest: /root/ansible-db/oracle-sakila-db
+        owner: root
+        group: root        
+        mode: 0777

@@ -16,3 +16,64 @@
     - name: Run PowerShell script
       win_shell: |
         powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm2\start_vm2.ps1"
+    
+- name: Start postgress service
+  hosts: vm-2
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Check if Postgres files exist
+      stat:
+        path: "~/bachelor/ansible-db/vm-2/postgres-sakila-db/"
+      register: postgres_files_exist
+
+    - name: Delete PowerShell script to pull the newest changes
+      file:
+        path: "~/bachelor/ansible-db/vm-2/postgres-sakila-db"
+        state: absent
+      when: postgres_files_exist.stat.exists
+
+    - name: Download postgres files
+      copy:
+        src: ~/bachelor/ansible-db/vm-2/postgres-sakila-db
+        dest: /root/ansible-db/postgres-sakila-db
+        owner: root
+        group: root        
+        mode: 0777
+    
+    - name: Install dependencies for PostgreSQL
+      apt: 
+        name: "{{item}}" 
+        update_cache: true 
+        state: latest
+      with_items:
+      - bash
+      - openssl
+      - libssl-dev
+      - libssl-doc
+
+    - name: Install PostgreSQL 
+      apt: 
+        name: "{{item}}"
+        update_cache: true 
+        state: present
+      with_items:
+      - postgresql
+      - postgresql-contrib
+      - libpq-dev
+      - python3-psycopg2
+      become: yes
+
+    - name: Ensure the PostgreSQL service is running
+      service: 
+        name: postgresql 
+        state: started 
+        enabled: yes
+
+    - name: Ensure user is created
+      become: true
+      postgresql_user:
+        name: amelia_user
+        password: amelia_user
+        priv: ALL
+        state: present

@@ -1,4 +1,4 @@
-- name: Start Oracle VM4
+- name: Start MSSQL VM4
   hosts: windows
   gather_facts: no
   tasks:
@@ -17,4 +17,18 @@
       win_shell: |
         powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm4\start_vm4.ps1"
 
-
+- name: Install Microsoft SQL Server
+  hosts: vm-4
+  become: yes
+  vars:
+    mssql_accept_microsoft_odbc_driver_17_for_sql_server_eula: true
+    mssql_accept_microsoft_cli_utilities_for_sql_server_eula: true
+    mssql_accept_microsoft_sql_server_standard_eula: true
+    mssql_password: "admin123"
+    mssql_edition: Evaluation
+    mssql_enable_sql_agent: true
+    mssql_install_fts: true
+    mssql_install_powershell: true
+    mssql_tune_for_fua_storage: true
+  roles:
+    - microsoft.sql.server

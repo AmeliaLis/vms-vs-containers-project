@@ -125,3 +125,4 @@ Run playbook:
 2. Configure postgress on VM2 - preparation, not tested
 3. Configure oracle db on VM3 - https://docs.oracle.com/en/database/oracle/oracle-database/21/xeinl/installing-oracle-database-free.html#GUID-46EA860A-AAC4-453F-8EEE-42CC55A4FAD5 -> do it manually
 4. Configure Microsoft SQL Server -> https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver16&tabs=ubuntu2004 , https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-deploy-ansible?view=sql-server-ver16 , https://www.youtube.com/watch?v=1Qlf_xwFz7Y , https://galaxy.ansible.com/ui/repo/published/microsoft/sql/docs/ - preparation, not tested
+5. Think about SQLLITE or DB2 when Oracle is impossible to download - https://www.ibm.com/docs/en/db2/11.5?topic=servers-db2-installation-methods 

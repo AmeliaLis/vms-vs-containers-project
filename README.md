@@ -115,16 +115,18 @@ Run playbook:
 `ansible-playbook playbook.yml -i inventory.ini --extra-vars "ansible_sudo_pass=yourPassword"`
 
 ## Next steps
-- install necessary tools on ansible controller :
-    sudo yum install ansible-collection-microsoft-sql
-    ansible-galaxy collection install microsoft.sql​
+- install oracledb
+- figure out timing in ansible
 - First steps to DOCKER!
 
 
 1. Configure mysql on VM1 - DONE
-2. Configure postgress on VM2 - preparation, not tested
+2. Configure postgress on VM2 - DONE
 3. Configure oracle db on VM3 - https://docs.oracle.com/en/database/oracle/oracle-database/21/xeinl/installing-oracle-database-free.html#GUID-46EA860A-AAC4-453F-8EEE-42CC55A4FAD5 -> do it manually
-4. Configure Microsoft SQL Server -> https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver16&tabs=ubuntu2004 , https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-deploy-ansible?view=sql-server-ver16 , https://www.youtube.com/watch?v=1Qlf_xwFz7Y , https://galaxy.ansible.com/ui/repo/published/microsoft/sql/docs/ - preparation, not tested
+4. Configure Microsoft SQL Server - DONE
+
+https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver16&tabs=ubuntu2004 , https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-deploy-ansible?view=sql-server-ver16 , https://www.youtube.com/watch?v=1Qlf_xwFz7Y , https://galaxy.ansible.com/ui/repo/published/microsoft/sql/docs/
+
 5. Think about SQLLITE or DB2 when Oracle is impossible to download - https://www.ibm.com/docs/en/db2/11.5?topic=servers-db2-installation-methods 
 
 
@@ -136,3 +138,10 @@ Run playbook:
 
 7. Run ansible
  ansible-playbook -i /home/amelia_user/hosts.ini ./vm-4/db-vm4.yaml -kK
+
+8. postgresql https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
+
+
+amelia_user@db-machine:~$ sudo -i -u postgres
+amelia_user@db-machine:~$ sudo -u amelia_user psql
+psql (12.18 (Ubuntu 12.18-0ubuntu0.20.04.1))

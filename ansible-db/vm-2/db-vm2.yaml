@@ -51,11 +51,3 @@
         name: postgresql 
         state: started 
         enabled: yes
-
-    - name: Ensure user is created
-      become: true
-      postgresql_user:
-        name: amelia_user
-        password: admin123
-        priv: ALL
-        state: present

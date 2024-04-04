@@ -18,7 +18,7 @@
         powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm4\start-vm4.ps1"
 
 - name: Start mssql service
-  hosts: vm-1
+  hosts: vm-4
   gather_facts: no
   become: yes
   tasks:

@@ -88,8 +88,8 @@ network:
     - https://docs.ansible.com/ansible/latest/os_guide/windows_setup.html
     - https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui
     - https://forums.virtualbox.org/viewtopic.php?t=104814
-5. mysql has been configured by ansible playbook - medium
-6. postgress has been configured not tested yet - https://medium.com/splunkuserdeveloperadministrator/creating-postgresql-database-with-ansible-da65878b782f 
+
+5. vim /etc/ansible/ansible.cfg `[defaults] callbacks_enabled=profile_tasks`
 
 Sample Playbook:
 ```
@@ -113,12 +113,12 @@ Hosts:
 Run playbook:
 
 `ansible-playbook playbook.yml -i inventory.ini --extra-vars "ansible_sudo_pass=yourPassword"`
+`ansible-playbook -i /home/amelia_user/hosts.ini ./vm-4/db-vm4.yaml -kK` - it will ask for sudo password
 
 ## Next steps
 - install oracledb
-- figure out timing in ansible
-- First steps to DOCKER!
-
+- next steps to DOCKER!
+- think about bash script to run sql files
 
 1. Configure mysql on VM1 - DONE
 2. Configure postgress on VM2 - DONE
@@ -129,17 +129,12 @@ https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?vi
 
 5. Think about SQLLITE or DB2 when Oracle is impossible to download - https://www.ibm.com/docs/en/db2/11.5?topic=servers-db2-installation-methods 
 
-
-
 6. Miscorsoft sql server has been installed on 192.168.0.118 connect via
  sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C 
 
  https://learn.microsoft.com/en-us/sql/tools/sqlcmd/sqlcmd-run-transact-sql-script-files?view=sql-server-ver16
 
-7. Run ansible
- ansible-playbook -i /home/amelia_user/hosts.ini ./vm-4/db-vm4.yaml -kK
-
-8. postgresql https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
+7. postgresql https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
 
 
 amelia_user@db-machine:~$ sudo -i -u postgres

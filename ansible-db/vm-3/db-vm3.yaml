@@ -4,13 +4,13 @@
   tasks:
     - name: Delete powershell script to pull the newest changes
       win_file:
-        path: C:\Users\DELL\workspace\vm3\start_vm3.ps1
+        path: "C:\\Users\\DELL\\workspace\\vm3\\start_vm3.ps1"
         state: absent
 
     - name: Copy PowerShell script to remote host
       win_copy:
         src: ~/bachelor/ansible-db/vm-3/start_vm3.ps1  # Update the path to your PowerShell script
-        dest: C:\Users\DELL\workspace\vm3\  # Update the destination directory as per your workspace
+        dest: "C:\\Users\\DELL\\workspace\\vm3\\"  # Update the destination directory as per your workspace
       register: copy_result
     
     - name: Run PowerShell script

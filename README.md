@@ -133,3 +133,6 @@ Run playbook:
  sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C 
 
  https://learn.microsoft.com/en-us/sql/tools/sqlcmd/sqlcmd-run-transact-sql-script-files?view=sql-server-ver16
+
+7. Run ansible
+ ansible-playbook -i /home/amelia_user/hosts.ini ./vm-4/db-vm4.yaml -kK

@@ -21,6 +21,7 @@
   hosts: vm-4
   gather_facts: no
   become: yes
+  become_method: sudo
   tasks:
     - name: Check if mssql files exist
       stat:

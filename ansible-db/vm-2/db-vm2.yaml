@@ -40,29 +40,11 @@
         owner: root
         group: root        
         mode: 0777
-    
-    - name: Install dependencies for PostgreSQL
-      apt: 
-        name: "{{item}}" 
-        update_cache: true 
-        state: latest
-      with_items:
-      - bash
-      - openssl
-      - libssl-dev
-      - libssl-doc
 
-    - name: Install PostgreSQL 
-      apt: 
-        name: "{{item}}"
-        update_cache: true 
+    - name: Install PostgreSQL
+      package:
+        name: postgresql
         state: present
-      with_items:
-      - postgresql
-      - postgresql-contrib
-      - libpq-dev
-      - python3-psycopg2
-      become: yes
 
     - name: Ensure the PostgreSQL service is running
       service: 
@@ -74,6 +56,6 @@
       become: true
       postgresql_user:
         name: amelia_user
-        password: amelia_user
+        password: admin123
         priv: ALL
         state: present

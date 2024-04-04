@@ -9,7 +9,7 @@
 
     - name: Copy PowerShell script to remote host
       win_copy:
-        src: ~/bachelor/ansible-db/start_vm2.ps1  # Update the path to your PowerShell script
+        src: ~/bachelor/ansible-db/vm-2/start_vm2.ps1  # Update the path to your PowerShell script
         dest: C:\Users\DELL\workspace\vm2\  # Update the destination directory as per your workspace
       register: copy_result
     

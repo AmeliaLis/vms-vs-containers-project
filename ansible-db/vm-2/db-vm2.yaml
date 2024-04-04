@@ -4,12 +4,12 @@
   tasks:
     - name: Delete powershell script to pull the newest changes
       win_file:
-        path: "C:\\Users\\DELL\\workspace\\vm2\\start_vm2.ps1"
+        path: "C:\\Users\\DELL\\workspace\\vm2\\start-vm2.ps1"
         state: absent
 
     - name: Copy PowerShell script to remote host
       win_copy:
-        src: ~/bachelor/ansible-db/vm-2/start_vm2.ps1  # Update the path to your PowerShell script
+        src: ~/bachelor/ansible-db/vm-2/start-vm2.ps1  # Update the path to your PowerShell script
         dest: "C:\\Users\\DELL\\workspace\\vm2\\""  # Update the destination directory as per your workspace
       register: copy_result
     
@@ -19,7 +19,7 @@
 
     - name: Run PowerShell script
       win_shell: |
-        powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm2\start_vm2.ps1"
+        powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm2\start-vm2.ps1"
 
     - name: Record the end time
       command: date +%s.%N

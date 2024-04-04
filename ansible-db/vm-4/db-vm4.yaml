@@ -17,17 +17,26 @@
       win_shell: |
         powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm4\start-vm4.ps1"
 
-- name: Install Microsoft SQL Server
-  hosts: vm-4
-  vars:
-    mssql_accept_microsoft_odbc_driver_17_for_sql_server_eula: true
-    mssql_accept_microsoft_cli_utilities_for_sql_server_eula: true
-    mssql_accept_microsoft_sql_server_standard_eula: true
-    mssql_password: "admin123"
-    mssql_edition: Evaluation
-    mssql_enable_sql_agent: true
-    mssql_install_fts: true
-    mssql_install_powershell: true
-    mssql_tune_for_fua_storage: true
-  roles:
-    - microsoft.sql.server
+- name: Start mssql service
+  hosts: vm-1
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Check if mssql files exist
+      stat:
+        path: "~/bachelor/ansible-db/vm-4/sql-server-sakila-db/"
+      register: mssql_files_exist
+
+    - name: Delete MYSQL files to pull the newest changes
+      file:
+        path: "~/bachelor/ansible-db/vm-4/sql-server-sakila-db/"
+        state: absent
+      when: mssql_files_exist.stat.exists
+
+    - name: Download mysql files
+      copy:
+        src: ~/bachelor/ansible-db/vm-4/sql-server-sakila-db/
+        dest: /root/ansible-db/sql-server-sakila-db
+        owner: root
+        group: root        
+        mode: 0777

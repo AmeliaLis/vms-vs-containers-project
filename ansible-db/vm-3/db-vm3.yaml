@@ -24,8 +24,12 @@
 
     - name: Run Insert schema script
       win_shell: |
-        bash "C:\Users\DELL\workspace\vm3\schema.sh"
+        "bash /c/Users/DELL/workspace/vm3/schema.sh"
 
     - name: Run Drop schema script
       win_shell: |
-        bash "C:\Users\DELL\workspace\vm3\drop_schema.sh"
+        "bash /c/Users/DELL/workspace/vm3/drop_schema"
+    
+    - name: Stop vm 
+      win_shell: |
+        VBoxManage controlvm db-machine-3-oracle savestate

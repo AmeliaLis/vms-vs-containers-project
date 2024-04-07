@@ -2,22 +2,22 @@
   hosts: windows
   gather_facts: no
   tasks:
-    # - name: Check if powershell script exists
-    #   win_stat:
-    #     path: "C:\\Users\\DELL\\workspace\\vm1\\start-vm1.ps1"
-    #   register: script_file_stat
+    - name: Check if powershell script exists
+      win_stat:
+        path: "C:\\Users\\DELL\\workspace\\vm1\\start-vm1.ps1"
+      register: script_file_stat
 
-    # - name: Delete PowerShell script to pull the newest changes
-    #   win_file:
-    #     path: "C:\\Users\\DELL\\workspace\\vm1\\start-vm1.ps1"
-    #     state: absent
-    #   when: script_file_stat.stat.exists
+    - name: Delete PowerShell script to pull the newest changes
+      win_file:
+        path: "C:\\Users\\DELL\\workspace\\vm1\\start-vm1.ps1"
+        state: absent
+      when: script_file_stat.stat.exists
 
-    # - name: Copy PowerShell script to remote host
-    #   win_copy:
-    #     src: ~/bachelor/ansible-db/vm-1/start-vm1.ps1
-    #     dest: C:\Users\DELL\workspace\vm1\
-    #   register: copy_result
+    - name: Copy PowerShell script to remote host
+      win_copy:
+        src: ~/bachelor/ansible-db/vm-1/start-vm1.ps1
+        dest: C:\Users\DELL\workspace\vm1\
+      register: copy_result
 
     - name: Start VM-1
       win_shell: |

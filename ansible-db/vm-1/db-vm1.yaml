@@ -97,6 +97,7 @@
 
     - name: Run delete data script
       shell: mysql -u amelia_user -pamelia_user -h localhost sakila -e 'source /home/amelia_user/mysql-sakila-db/mysql-sakila-delete-data.sql'
+      ignore_errors: yes
     
     - name: Run drop script
       shell: mysql -u amelia_user -pamelia_user -h localhost sakila -e 'source /home/amelia_user/mysql-sakila-db/mysql-sakila-drop-objects.sql'

@@ -116,14 +116,13 @@ Run playbook:
 `ansible-playbook -i /home/amelia_user/hosts.ini ./vm-4/db-vm4.yaml -kK` - it will ask for sudo password
 
 ## Next steps
-- think about bash script to run sql files
-- add ansible step to execute sql files on mysql
 - add ansible step to execute sql files on postgres
 - add ansible step to execute sql files on mssql
-- next steps to DOCKER!
+- next steps to DOCKER! - think about bash script to run sql files - just to automate the process
+- create ansible playbooks to run seperate bashscript with execution on docker instances - just to have timings, thanks to the ansible callbacks 
 
 
-1. Configure mysql on VM1 - DONE
+1. Configure mysql on VM1 - DONE - show processlist
 2. Configure postgress on VM2 - DONE
 3. Configure oracle db on VM3 - DONE - https://www.oracle.com/database/technologies/databaseappdev-vm.html
 4. Configure Microsoft SQL Server - DONE

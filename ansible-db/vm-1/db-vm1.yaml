@@ -19,10 +19,6 @@
         dest: C:\Users\DELL\workspace\vm1\
       register: copy_result
 
-    - name: Start VM-1
-      win_shell: |
-        VBoxManage startvm db-machine-1 --type headless
-
 - name: Start mysql service
   hosts: vm-1
   gather_facts: no

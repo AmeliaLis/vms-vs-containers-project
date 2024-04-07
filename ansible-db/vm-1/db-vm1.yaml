@@ -84,9 +84,17 @@
       service:
         name: mysql
         state: restarted
+    
+    - name: Create db
+      mysql_db:
+        name: sakila
+        state: present
+        login_host: localhost
+        login_user: amelia_user
+        login_password: amelia_user
 
     - name: Run SQL script
-      shell: mysql -u amelia_user -pamelia_user -h localhost -e source /root/ansible-db/mysql-sakila-db/mysql-sakila-schema.sql
+      shell: mysql -u amelia_user -pamelia_user -h localhost sakila -e source /root/ansible-db/mysql-sakila-db/mysql-sakila-schema.sql
 
     - name: Run SQL script
       mysql_db:

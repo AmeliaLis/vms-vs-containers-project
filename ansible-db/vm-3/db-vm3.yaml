@@ -9,14 +9,14 @@
 
     - name: Copy PowerShell script to remote host
       win_copy:
-        src: ~/bachelor/ansible-db/vm-3/start-vm3.ps1  # Update the path to your PowerShell script
-        dest: "C:\\Users\\DELL\\workspace\\vm3\\"  # Update the destination directory as per your workspace
+        src: ~/bachelor/ansible-db/vm-3/start-vm3.ps1
+        dest: "C:\\Users\\DELL\\workspace\\vm3\\"  
       register: copy_result
 
     - name: Copy db scripts to remote host
       win_copy:
-        src: ~/bachelor/ansible-db/vm-3/sql-scripts/  # Update the path to your PowerShell script
-        dest: "C:\\Users\\DELL\\workspace\\vm3\\"  # Update the destination directory as per your workspace
+        src: ~/bachelor/ansible-db/vm-3/sql-scripts/
+        dest: "C:\\Users\\DELL\\workspace\\vm3\\"
 
     - name: Start vm script
       win_shell: |
@@ -25,6 +25,14 @@
     - name: Run Insert schema script
       win_shell: |
         "bash /c/Users/DELL/workspace/vm3/schema.sh"
+
+    - name: Run Insert data script
+      win_shell: |
+        "bash /c/Users/DELL/workspace/vm3/insert_data"
+
+    - name: Run Insert data script
+      win_shell: |
+        "bash /c/Users/DELL/workspace/vm3/insert_data"
 
     - name: Run Drop schema script
       win_shell: |

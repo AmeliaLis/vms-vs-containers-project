@@ -116,9 +116,9 @@ Run playbook:
 `ansible-playbook -i /home/amelia_user/hosts.ini ./vm-4/db-vm4.yaml -kK` - it will ask for sudo password
 
 ## Next steps
-- install oracledb
-- next steps to DOCKER!
 - think about bash script to run sql files
+- next steps to DOCKER!
+
 
 1. Configure mysql on VM1 - DONE
 2. Configure postgress on VM2 - DONE

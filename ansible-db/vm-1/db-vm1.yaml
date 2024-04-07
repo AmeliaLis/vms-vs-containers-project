@@ -84,3 +84,43 @@
       service:
         name: mysql
         state: restarted
+
+    - name: Run SQL script
+      mysql_db:
+        login_user: amelia_user
+        login_password: amelia_user
+        login_host: localhost
+        login_port: 3306
+        state: import
+        target: /root/ansible-db/mysql-sakila-db/mysql-sakila-schema.sql
+
+    - name: Run SQL script
+      mysql_db:
+        login_user: amelia_user
+        login_password: amelia_user
+        login_host: localhost
+        login_port: 3306
+        state: import
+        target: /root/ansible-db/mysql-sakila-db/mysql-sakila-insert-data.sql
+
+    - name: Run SQL script
+      mysql_db:
+        login_user: amelia_user
+        login_password: amelia_user
+        login_host: localhost
+        login_port: 3306
+        state: import
+        target: /root/ansible-db/mysql-sakila-db/mysql-sakila-delete-data.sql
+    
+    - name: Run SQL script
+      mysql_db:
+        login_user: amelia_user
+        login_password: amelia_user
+        login_host: localhost
+        login_port: 3306
+        state: import
+        target: /root/ansible-db/mysql-sakila-db/mysql-sakila-drop-objects.sql
+
+    - name: Stop vm 
+      win_shell: |
+        VBoxManage controlvm db-machine-1 savestate

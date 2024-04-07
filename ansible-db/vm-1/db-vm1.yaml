@@ -42,7 +42,7 @@
     - name: Download mysql files
       copy:
         src: ~/bachelor/ansible-db/vm-1/mysql-sakila-db/
-        dest: /root/ansible-db/mysql-sakila-db
+        dest: /home/amelia_user/mysql-sakila-db
         owner: root
         group: root        
         mode: 0777
@@ -94,7 +94,7 @@
         login_password: amelia_user
 
     - name: Run SQL script
-      shell: mysql -u amelia_user -pamelia_user -h localhost sakila -e source /root/ansible-db/mysql-sakila-db/mysql-sakila-schema.sql
+      shell: mysql -u amelia_user -pamelia_user -h localhost sakila -e 'source /home/amelia_user/mysql-sakila-db/mysql-sakila-schema.sql'
 
     - name: Run SQL script
       mysql_db:

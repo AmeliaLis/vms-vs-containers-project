@@ -117,12 +117,15 @@ Run playbook:
 
 ## Next steps
 - think about bash script to run sql files
+- add ansible step to execute sql files on mysql
+- add ansible step to execute sql files on postgres
+- add ansible step to execute sql files on mssql
 - next steps to DOCKER!
 
 
 1. Configure mysql on VM1 - DONE
 2. Configure postgress on VM2 - DONE
-3. Configure oracle db on VM3 - https://docs.oracle.com/en/database/oracle/oracle-database/21/xeinl/installing-oracle-database-free.html#GUID-46EA860A-AAC4-453F-8EEE-42CC55A4FAD5 -> do it manually
+3. Configure oracle db on VM3 - DONE - https://www.oracle.com/database/technologies/databaseappdev-vm.html
 4. Configure Microsoft SQL Server - DONE
 
 https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver16&tabs=ubuntu2004 , https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-deploy-ansible?view=sql-server-ver16 , https://www.youtube.com/watch?v=1Qlf_xwFz7Y , https://galaxy.ansible.com/ui/repo/published/microsoft/sql/docs/

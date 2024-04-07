@@ -4,24 +4,24 @@
   tasks:
     - name: Check if powershell script exists
       win_stat:
-        path: "C:\\Users\\DELL\\workspace\\vm-1\\start-vm1.ps1"
+        path: "C:\\Users\\DELL\\workspace\\vm1\\start-vm1.ps1"
       register: script_file_stat
 
     - name: Delete PowerShell script to pull the newest changes
       win_file:
-        path: "C:\\Users\\DELL\\workspace\\vm-1\\start-vm1.ps1"
+        path: "C:\\Users\\DELL\\workspace\\vm1\\start-vm1.ps1"
         state: absent
       when: script_file_stat.stat.exists
 
     - name: Copy PowerShell script to remote host
       win_copy:
         src: ~/bachelor/ansible-db/vm-1/start-vm1.ps1
-        dest: C:\Users\DELL\workspace\vm-1\
+        dest: C:\Users\DELL\workspace\vm1\
       register: copy_result
 
     - name: Run PowerShell script
       win_shell: |
-        powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm-1\start-vm1.ps1"
+        powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm1\start-vm1.ps1"
 
 - name: Start mysql service
   hosts: vm-1

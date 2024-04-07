@@ -4,7 +4,7 @@
   tasks:
     - name: Delete powershell script to pull the newest changes
       win_file:
-        path: "C:\\Users\\DELL\\workspace\\vm3\\start-vm3.ps1"
+        path: "C:\\Users\\DELL\\workspace\\vm3\\"
         state: absent
 
     - name: Copy PowerShell script to remote host
@@ -12,31 +12,20 @@
         src: ~/bachelor/ansible-db/vm-3/start-vm3.ps1  # Update the path to your PowerShell script
         dest: "C:\\Users\\DELL\\workspace\\vm3\\"  # Update the destination directory as per your workspace
       register: copy_result
-    
-    - name: Run PowerShell script
+
+    - name: Copy db scripts to remote host
+      win_copy:
+        src: ~/bachelor/ansible-db/vm-3/sql-scripts/  # Update the path to your PowerShell script
+        dest: "C:\\Users\\DELL\\workspace\\vm3\\"  # Update the destination directory as per your workspace
+
+    - name: Start vm script
       win_shell: |
         powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm3\start-vm3.ps1"
 
-- name: Download files for oracle database
-  hosts: vm-2
-  gather_facts: no
-  become: yes
-  tasks:
-    - name: Check if Oracle files exist
-      stat:
-        path: "~/bachelor/ansible-db/vm-3/oracle-sakila-db/"
-      register: oracle_files_exist
+    - name: Run Insert schema script
+      win_shell: |
+        bash "C:\\Users\\DELL\\workspace\vm3\\schema.sh"
 
-    - name: Delete PowerShell script to pull the newest changes
-      file:
-        path: "~/bachelor/ansible-db/vm-3/oracle-sakila-db"
-        state: absent
-      when: oracle_files_exist.stat.exists
-
-    - name: Download oracle files
-      copy:
-        src: ~/bachelor/ansible-db/vm-3/oracle-sakila-db
-        dest: /root/ansible-db/oracle-sakila-db
-        owner: root
-        group: root        
-        mode: 0777
+    - name: Run Drop schema script
+      win_shell: |
+        bash "C:\\Users\\DELL\\workspace\vm3\\drop_schema.sh"

@@ -90,7 +90,7 @@
         login_user: amelia_user
         login_password: amelia_user
         login_host: localhost
-        login_port: 3306
+        name: sakila
         state: import
         target: /root/ansible-db/mysql-sakila-db/mysql-sakila-schema.sql
 
@@ -99,7 +99,7 @@
         login_user: amelia_user
         login_password: amelia_user
         login_host: localhost
-        login_port: 3306
+        name: sakila
         state: import
         target: /root/ansible-db/mysql-sakila-db/mysql-sakila-insert-data.sql
 
@@ -108,7 +108,7 @@
         login_user: amelia_user
         login_password: amelia_user
         login_host: localhost
-        login_port: 3306
+        name: sakila
         state: import
         target: /root/ansible-db/mysql-sakila-db/mysql-sakila-delete-data.sql
     
@@ -117,7 +117,7 @@
         login_user: amelia_user
         login_password: amelia_user
         login_host: localhost
-        login_port: 3306
+        name: sakila
         state: import
         target: /root/ansible-db/mysql-sakila-db/mysql-sakila-drop-objects.sql
 

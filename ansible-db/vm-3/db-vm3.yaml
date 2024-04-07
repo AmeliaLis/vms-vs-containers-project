@@ -2,10 +2,10 @@
   hosts: windows
   gather_facts: no
   tasks:
-    - name: Delete powershell script to pull the newest changes
-      win_file:
-        path: "C:\\Users\\DELL\\workspace\\vm3\\"
-        state: absent
+    # - name: Delete powershell script to pull the newest changes
+    #   win_file:
+    #     path: "C:\\Users\\DELL\\workspace\\vm3\\"
+    #     state: absent
 
     - name: Copy PowerShell script to remote host
       win_copy:

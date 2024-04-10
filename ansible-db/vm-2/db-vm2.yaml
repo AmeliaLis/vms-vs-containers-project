@@ -20,34 +20,34 @@
 - name: Start postgress service
   hosts: vm-2
   gather_facts: no
-  become: yes
   tasks:
-    - name: Check if Postgres files exist
-      stat:
-        path: "~/bachelor/ansible-db/vm-2/postgres-sakila-db/"
-      register: postgres_files_exist
-
-    - name: Delete PowerShell script to pull the newest changes
-      file:
-        path: "~/bachelor/ansible-db/vm-2/postgres-sakila-db"
-        state: absent
-      when: postgres_files_exist.stat.exists
 
     - name: Download postgres files
       copy:
         src: ~/bachelor/ansible-db/vm-2/postgres-sakila-db
-        dest: /root/ansible-db/postgres-sakila-db
-        owner: root
-        group: root        
+        dest: /home/amelia_user/
+        owner: amelia_user
+        group: amelia_user        
         mode: 0777
 
     - name: Install PostgreSQL
+      become: yes
       package:
         name: postgresql
         state: present
 
     - name: Ensure the PostgreSQL service is running
+      become: yes
       service: 
         name: postgresql 
         state: started 
         enabled: yes
+
+    - name: Execute SQL file
+      become_user: amelia_user
+      postgresql_db:
+        name: amelia_user
+        state: present
+        login_user: amelia_user
+        login_host: localhost
+        target: /home/amelia_user/postgres-sakila-db/postgres-sakila-schema.sql

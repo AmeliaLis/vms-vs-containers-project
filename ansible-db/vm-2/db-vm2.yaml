@@ -49,5 +49,6 @@
         name: amelia_user
         state: present
         login_user: amelia_user
+        login_password: admin123
         login_host: localhost
         target: /home/amelia_user/postgres-sakila-db/postgres-sakila-schema.sql

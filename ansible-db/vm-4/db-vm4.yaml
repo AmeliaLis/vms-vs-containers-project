@@ -25,7 +25,7 @@
     - name: Download mysql files
       copy:
         src: ~/bachelor/ansible-db/vm-4/sql-server-sakila-db/
-        dest: /home/amelia_user/
+        dest: /home/amelia_user/postgres-sakila-db
         owner: amelia_user
         group: amelia_user        
         mode: 0777

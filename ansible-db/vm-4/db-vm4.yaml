@@ -32,7 +32,7 @@
 
     - name: Run Insert schema script
       win_shell: |
-        sqlcmd -S 192.168.0.118 -U sa -P Admin123! -C -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-schema.sql'
+        sqlcmd -S 192.168.0.118 -U sa -P Admin123! -C -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-insert-data.sql
     
     # - name: Run Insert data script
     #   become_user: amelia_user

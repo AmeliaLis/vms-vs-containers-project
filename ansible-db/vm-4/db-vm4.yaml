@@ -25,23 +25,23 @@
     - name: Download mysql files
       copy:
         src: ~/bachelor/ansible-db/vm-4/sql-server-sakila-db/
-        dest: /home/amelia_user/postgres-sakila-db/
+        dest: /home/amelia_user/sql-server-sakila-db/
         owner: amelia_user
         group: amelia_user        
         mode: 0777
 
     - name: Run Insert schema script
       become_user: amelia_user
-      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/postgres-sakila-db/postgres-sakila-schema.sql'
+      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-schema.sql'
     
     - name: Run Insert data script
       become_user: amelia_user
-      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/postgres-sakila-db/postgres-sakila-insert-data.sql'
+      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-insert-data.sql'
 
     - name: Run Delete data script
       become_user: amelia_user
-      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/postgres-sakila-db/postgres-sakila-delete-data.sql'
+      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-delete-data.sql'
 
     - name: Run Drop schema script
       become_user: amelia_user
-      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/postgres-sakila-db/postgres-sakila-drop-objects.sql'
+      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-drop-objects.sql'

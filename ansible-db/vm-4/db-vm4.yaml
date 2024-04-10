@@ -34,14 +34,15 @@
       win_shell: |
         sqlcmd -S 192.168.0.118 -U sa -P Admin123! -C -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-schema.sql
     
-    # - name: Run Insert data script
-    #   become_user: amelia_user
-    #   command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-insert-data.sql'
+    - name: Run Drop schema script
+      win_shell: |
+        sqlcmd -S 192.168.0.118 -U sa -P Admin123! -C -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-insert-data.sql
+        - name: Run Drop schema script
 
-    # - name: Run Delete data script
-    #   become_user: amelia_user
-    #   command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-delete-data.sql'
+    - name: Run Drop schema script
+      win_shell: |
+        sqlcmd -S 192.168.0.118 -U sa -P Admin123! -C -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-delete-data.sql
 
-    # - name: Run Drop schema script
-    #   become_user: amelia_user
-    #   command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-drop-objects.sql'
+    - name: Run Drop schema script
+      win_shell: |
+          sqlcmd -S 192.168.0.118 -U sa -P Admin123! -C -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-drop-objects.sql

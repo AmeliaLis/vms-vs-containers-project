@@ -32,16 +32,16 @@
 
     - name: Run Insert schema script
       become_user: amelia_user
-      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i "/home/amelia_user/postgres-sakila-db/postgres-sakila-schema.sql'
+      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/postgres-sakila-db/postgres-sakila-schema.sql'
     
     - name: Run Insert data script
       become_user: amelia_user
-      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i "/home/amelia_user/postgres-sakila-db/postgres-sakila-insert-data.sql'
+      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/postgres-sakila-db/postgres-sakila-insert-data.sql'
 
     - name: Run Delete data script
       become_user: amelia_user
-      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i "/home/amelia_user/postgres-sakila-db/postgres-sakila-delete-data.sql'
+      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/postgres-sakila-db/postgres-sakila-delete-data.sql'
 
     - name: Run Drop schema script
       become_user: amelia_user
-      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i "/home/amelia_user/postgres-sakila-db/postgres-sakila-drop-objects.sql'
+      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/postgres-sakila-db/postgres-sakila-drop-objects.sql'

@@ -89,17 +89,17 @@
         login_user: amelia_user
         login_password: amelia_user
 
-    - name: Run Schema script
+    - name: Run Insert schema script
       shell: mysql -u amelia_user -pamelia_user -h localhost sakila -e 'source /home/amelia_user/mysql-sakila-db/mysql-sakila-schema.sql'
 
-    - name: Run insert data script
+    - name: Run Insert data script
       shell: mysql -u amelia_user -pamelia_user -h localhost sakila -e 'source /home/amelia_user/mysql-sakila-db/mysql-sakila-insert-data.sql'
 
-    - name: Run delete data script
+    - name: Run Delete data script
       shell: mysql -u amelia_user -pamelia_user -h localhost sakila -e 'source /home/amelia_user/mysql-sakila-db/mysql-sakila-delete-data.sql'
       ignore_errors: yes
     
-    - name: Run drop script
+    - name: Run Drop schema script
       shell: mysql -u amelia_user -pamelia_user -h localhost sakila -e 'source /home/amelia_user/mysql-sakila-db/mysql-sakila-drop-objects.sql'
 
     - name: Stop VM-1

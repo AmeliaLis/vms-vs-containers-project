@@ -30,9 +30,9 @@
       win_shell: |
         "bash /c/Users/DELL/workspace/vm3/insert_data"
 
-    - name: Run Insert data script
+    - name: Run Delete data script
       win_shell: |
-        "bash /c/Users/DELL/workspace/vm3/insert_data"
+        "bash /c/Users/DELL/workspace/vm3/delete_data"
 
     - name: Run Drop schema script
       win_shell: |

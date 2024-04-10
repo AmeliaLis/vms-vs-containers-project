@@ -116,7 +116,7 @@ Run playbook:
 `ansible-playbook -i /home/amelia_user/hosts.ini ./vm-4/db-vm4.yaml -kK` - it will ask for sudo password
 
 ## Next steps
-- add ansible step to execute sql files on postgres
+
 - add ansible step to execute sql files on mssql
 - next steps to DOCKER! - think about bash script to run sql files - just to automate the process
 - create ansible playbooks to run seperate bashscript with execution on docker instances - just to have timings, thanks to the ansible callbacks 
@@ -129,20 +129,20 @@ Run playbook:
 
 https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver16&tabs=ubuntu2004 , https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-deploy-ansible?view=sql-server-ver16 , https://www.youtube.com/watch?v=1Qlf_xwFz7Y , https://galaxy.ansible.com/ui/repo/published/microsoft/sql/docs/
 
-5. Think about SQLLITE or DB2 when Oracle is impossible to download - https://www.ibm.com/docs/en/db2/11.5?topic=servers-db2-installation-methods 
-
-6. Miscorsoft sql server has been installed on 192.168.0.118 connect via
+5. Miscorsoft sql server has been installed on 192.168.0.118 connect via
  sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C 
 
  https://learn.microsoft.com/en-us/sql/tools/sqlcmd/sqlcmd-run-transact-sql-script-files?view=sql-server-ver16
 
-7. postgresql https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
-
+6. postgresql https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
 
 amelia_user@db-machine:~$ sudo -i -u postgres
 amelia_user@db-machine:~$ sudo -u amelia_user psql
 psql (12.18 (Ubuntu 12.18-0ubuntu0.20.04.1))
 
-
+Postgres db
 sudo apt update
 sudo apt install python3-psycopg2
+
+
+VBoxManage metrics query db-machine-2 /CPU/Load/User,CPU/Load/Kernel

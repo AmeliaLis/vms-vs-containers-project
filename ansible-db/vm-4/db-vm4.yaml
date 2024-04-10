@@ -2,14 +2,15 @@
   hosts: windows
   gather_facts: no
   tasks:
-    - name: Delete powershell script to pull the newest changes
-      win_file:
-        path: "C:\\Users\\DELL\\workspace\\vm4\\start-vm4.ps1"
-        state: absent
-
     - name: Copy PowerShell script to remote host
       win_copy:
         src: ~/bachelor/ansible-db/vm-4/start-vm4.ps1  # Update the path to your PowerShell script
+        dest: "C:\\Users\\DELL\\workspace\\vm4\\"  # Update the destination directory as per your workspace
+      register: copy_result
+
+    - name: Copy PowerShell script to remote host
+      win_copy:
+        src: ~/bachelor/ansible-db/vm-4/stop-vm4.ps1  # Update the path to your PowerShell script
         dest: "C:\\Users\\DELL\\workspace\\vm4\\"  # Update the destination directory as per your workspace
       register: copy_result
     
@@ -20,24 +21,27 @@
 - name: Start mssql service
   hosts: vm-4
   gather_facts: no
-  become: yes
-  become_method: sudo
   tasks:
-    - name: Check if mssql files exist
-      stat:
-        path: "~/bachelor/ansible-db/vm-4/sql-server-sakila-db/"
-      register: mssql_files_exist
-
-    - name: Delete MYSQL files to pull the newest changes
-      file:
-        path: "~/bachelor/ansible-db/vm-4/sql-server-sakila-db/"
-        state: absent
-      when: mssql_files_exist.stat.exists
-
     - name: Download mysql files
       copy:
         src: ~/bachelor/ansible-db/vm-4/sql-server-sakila-db/
-        dest: /root/ansible-db/sql-server-sakila-db
-        owner: root
-        group: root        
+        dest: /home/amelia_user/
+        owner: amelia_user
+        group: amelia_user        
         mode: 0777
+
+    - name: Run Insert schema script
+      become_user: amelia_user
+      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i "/home/amelia_user/postgres-sakila-db/postgres-sakila-schema.sql'
+    
+    - name: Run Insert data script
+      become_user: amelia_user
+      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i "/home/amelia_user/postgres-sakila-db/postgres-sakila-insert-data.sql'
+
+    - name: Run Delete data script
+      become_user: amelia_user
+      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i "/home/amelia_user/postgres-sakila-db/postgres-sakila-delete-data.sql'
+
+    - name: Run Drop schema script
+      become_user: amelia_user
+      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i "/home/amelia_user/postgres-sakila-db/postgres-sakila-drop-objects.sql'

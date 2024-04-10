@@ -58,10 +58,10 @@
       become_user: amelia_user
       command: psql -U amelia_user -c '\i /home/amelia_user/postgres-sakila-db/postgres-sakila-drop-objects.sql'
 
-- name: Stop Oracle VM2
-  hosts: windows
-  gather_facts: no
-  tasks:
-    - name: Run PowerShell script to stop VM
-      win_shell: |
-        powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm2\stop-vm2.ps1"
+# - name: Stop Oracle VM2
+#   hosts: windows
+#   gather_facts: no
+#   tasks:
+#     - name: Run PowerShell script to stop VM
+#       win_shell: |
+#         powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm2\stop-vm2.ps1"

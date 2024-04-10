@@ -62,6 +62,6 @@
   hosts: windows
   gather_facts: no
   tasks:
-    - name: Run PowerShell script
+    - name: Run PowerShell script to stop VM
       win_shell: |
-        powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm2\start-vm2.ps1"
+        powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm2\stop-vm2.ps1"

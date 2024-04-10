@@ -32,7 +32,7 @@
 
     - name: Run Insert schema script
       become_user: amelia_user
-      command: sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-schema.sql'
+      command: /opt/mssql-tools/bin/sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-schema.sql'
     
     - name: Run Insert data script
       become_user: amelia_user

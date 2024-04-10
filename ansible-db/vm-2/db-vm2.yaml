@@ -52,3 +52,33 @@
         login_password: admin123
         login_host: localhost
         target: /home/amelia_user/postgres-sakila-db/postgres-sakila-schema.sql
+    
+    - name: Execute SQL file
+      become_user: amelia_user
+      postgresql_db:
+        name: amelia_user
+        state: present
+        login_user: amelia_user
+        login_password: admin123
+        login_host: localhost
+        target: /home/amelia_user/postgres-sakila-db/postgres-sakila-insert-data.sql
+
+    - name: Execute SQL file
+      become_user: amelia_user
+      postgresql_db:
+        name: amelia_user
+        state: present
+        login_user: amelia_user
+        login_password: admin123
+        login_host: localhost
+        target: /home/amelia_user/postgres-sakila-db/postgres-delete-data.sql
+
+    - name: Execute SQL file
+      become_user: amelia_user
+      postgresql_db:
+        name: amelia_user
+        state: present
+        login_user: amelia_user
+        login_password: admin123
+        login_host: localhost
+        target: /home/amelia_user/postgres-sakila-db/postgres-drop-objects.sql

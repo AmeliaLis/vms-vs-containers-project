@@ -14,6 +14,10 @@ http://www.etl-tools.com
 -- Delete data
 ALTER TABLE staff DROP CONSTRAINT fk_staff_address;
 ALTER TABLE staff DROP CONSTRAINT fk_staff_store;
+ALTER TABLE staff NOCHECK CONSTRAINT fk_staff_address;
+ALTER TABLE staff NOCHECK CONSTRAINT fk_staff_store;
+ALTER TABLE store NOCHECK CONSTRAINT fk_store_staff;
+
 DELETE FROM payment ;
 DELETE FROM rental ;
 DELETE FROM customer ;

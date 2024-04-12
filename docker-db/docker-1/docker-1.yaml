@@ -11,10 +11,8 @@
         docker run -d --name mysql_container -e MYSQL_ROOT_PASSWORD=admin123 mysql:latest
 
     - name: Copy Files to MySQL Container
-      win_copy:
-        src: "/path/to/your/files"
-        dest: "C:/path/in/container"
-      delegate_to: localhost
+      win_shell: |
+        docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=admin123 -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db:/tmp/mysq-sakila-db my-sql:latest
 
     - name: Wait for MySQL Service to Start
       wait_for:

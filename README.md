@@ -146,3 +146,28 @@ sudo apt install python3-psycopg2
 
 
 VBoxManage metrics query db-machine-2 /CPU/Load/User,CPU/Load/Kernel
+
+
+USE master; -- Make sure you are in the master database context
+GO
+
+-- Query to get the list of databases
+SELECT name, database_id, create_date, state_desc
+FROM sys.databases;
+
+
+USE YourDatabaseName; -- Replace YourDatabaseName with the name of the database you want to check
+GO
+
+-- Query to get the list of tables in the specified database
+SELECT schema_name(schema_id) AS schema_name,
+       name AS table_name,
+       create_date,
+       modify_date
+FROM sys.tables;
+
+
+SELECT c.name AS column_name, t.name AS data_type,c.max_length,c.precision,c.scale,c.is_nullable,c.is_identity,ISNULL(i.is_primary_key, 0) AS is_primary_key FROM sys.columns c INNER JOIN sys.types t ON c.system_type_id = t.system_type_id AND c.user_type_id = t.user_type_id LEFT JOIN sys.indexes i ON c.object_id = i.object_id AND i.is_primary_key = 1 WHERE c.object_id = OBJECT_ID('staff');
+
+
+SELECT staff_id,CONCAT(first_name, ' ', last_name) AS full_name,email,CASE WHEN active = 1 THEN 'Active'ELSE 'Inactive'END AS status,last_update FROM staff;

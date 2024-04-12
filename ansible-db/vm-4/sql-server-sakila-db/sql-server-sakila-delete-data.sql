@@ -15,7 +15,9 @@ http://www.etl-tools.com
 ALTER TABLE staff NOCHECK CONSTRAINT fk_staff_address;
 ALTER TABLE staff NOCHECK CONSTRAINT fk_staff_store;
 ALTER TABLE store NOCHECK CONSTRAINT fk_store_staff;
-
+ALTER TABLE store NOCHECK CONSTRAINT fk_store_address;
+ALTER TABLE address NOCHECK CONSTRAINT fk_address_city;
+DROP INDEX idx_fk_address_id ON store; 
 DELETE FROM payment ;
 DELETE FROM rental ;
 DELETE FROM customer ;

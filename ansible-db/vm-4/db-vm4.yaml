@@ -45,3 +45,7 @@
     - name: Run Drop schema script
       win_shell: |
         sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-drop-objects.sql
+
+    - name: Run Drop schema script
+      win_shell: |
+        sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -Q "DROP DATABASE sakila;"

@@ -32,16 +32,16 @@
 
     - name: Run Insert schema script
       win_shell: |
-        sqlcmd -S 192.168.0.118 -U sa -P Admin123! -C -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-schema.sql
+        sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-schema.sql
     
     - name: Run Insert data script
       win_shell: |
-        sqlcmd -S 192.168.0.118 -U sa -P Admin123! -C -d sakila-i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-insert-data.sql
+        sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila-i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-insert-data.sql
 
     - name: Run Delete data script
       win_shell: |
-        sqlcmd -S 192.168.0.118 -U sa -P Admin123! -C -d sakila -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-delete-data.sql
+        sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-delete-data.sql
 
     - name: Run Drop schema script
       win_shell: |
-        sqlcmd -S 192.168.0.118 -U sa -P Admin123! -C -d sakila -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-drop-objects.sql
+        sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-drop-objects.sql

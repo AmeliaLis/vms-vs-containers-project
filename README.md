@@ -152,8 +152,7 @@ USE master; -- Make sure you are in the master database context
 GO
 
 -- Query to get the list of databases
-SELECT name, database_id, create_date, state_desc
-FROM sys.databases;
+SELECT name, database_id, create_date, state_desc FROM sys.databases;
 
 
 USE YourDatabaseName; -- Replace YourDatabaseName with the name of the database you want to check

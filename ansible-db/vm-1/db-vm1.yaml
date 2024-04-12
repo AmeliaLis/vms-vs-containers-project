@@ -2,29 +2,33 @@
   hosts: windows
   gather_facts: no
   tasks:
-    - name: Check if powershell script exists
-      win_stat:
-        path: "C:\\Users\\DELL\\workspace\\vm1\\start-vm1.ps1"
-      register: script_file_stat
+    # - name: Check if powershell script exists
+    #   win_stat:
+    #     path: "C:\\Users\\DELL\\workspace\\vm1\\start-vm1.ps1"
+    #   register: script_file_stat
 
-    - name: Delete PowerShell script to pull the newest changes
-      win_file:
-        path: "C:\\Users\\DELL\\workspace\\vm1\\start-vm1.ps1"
-        state: absent
-      when: script_file_stat.stat.exists
+    # - name: Delete PowerShell script to pull the newest changes
+    #   win_file:
+    #     path: "C:\\Users\\DELL\\workspace\\vm1\\start-vm1.ps1"
+    #     state: absent
+    #   when: script_file_stat.stat.exists
 
-    - name: Copy PowerShell script to remote host
-      win_copy:
-        src: ~/bachelor/ansible-db/vm-1/start-vm1.ps1
-        dest: C:\Users\DELL\workspace\vm1\
-      register: copy_result
+    # - name: Copy PowerShell script to remote host
+    #   win_copy:
+    #     src: ~/bachelor/ansible-db/vm-1/start-vm1.ps1
+    #     dest: C:\Users\DELL\workspace\vm1\
+    #   register: copy_result
+
+    - name: Start vm-1 using powershell script
+      win_shell: |
+        powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm1\start-vm1.ps1"
 
 - name: Start mysql service
   hosts: vm-1
   gather_facts: no
   become: yes
   tasks:
-    - name: Check if MySQL files exist
+    - name: Check if MySQL files exist on vm
       stat:
         path: "~/bachelor/ansible-db/vm-1/mysql-sakila-db/"
       register: mysql_files_exist
@@ -55,13 +59,13 @@
         - libmysqlclient-dev
       become: yes
       
-    - name: start and enable mysql service
+    - name: Start and enable mysql service
       service:
         name: mysql
         state: started
         enabled: yes
 
-    - name: creating mysql user (medium_post)
+    - name: Create mysql user if amelia_user doesn't exist
       mysql_user:
         name: amelia_user
         password: amelia_user
@@ -81,7 +85,7 @@
         name: mysql
         state: restarted
     
-    - name: Create db
+    - name: Create sakila db to exectue sql files correctly
       mysql_db:
         name: sakila
         state: present
@@ -102,6 +106,9 @@
     - name: Run Drop schema script
       shell: mysql -u amelia_user -pamelia_user -h localhost sakila -e 'source /home/amelia_user/mysql-sakila-db/mysql-sakila-drop-objects.sql'
 
-    - name: Stop VM-1
-      win_shell: |
-        VBoxManage controlvm db-machine-1 savestate
+    - name: Drop database command
+      shell: mysql -u amelia_user -pamelia_user -h localhost sakila -e 'drop database sakila;'
+
+    # - name: Stop VM-1
+    #   win_shell: |
+    #     VBoxManage controlvm db-machine-1 savestate

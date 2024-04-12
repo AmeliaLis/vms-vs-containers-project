@@ -41,6 +41,9 @@ DROP TABLE staff;
 DROP TABLE city;
 DROP TABLE country;
 
+DROP DATABASE sakila;
+GO
+
 -- Procedures and views
 --drop procedure film_in_stock;
 --drop procedure film_not_in_stock;

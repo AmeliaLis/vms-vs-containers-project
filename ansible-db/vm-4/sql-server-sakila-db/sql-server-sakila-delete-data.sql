@@ -12,8 +12,6 @@ http://www.etl-tools.com
 
 
 -- Delete data
-ALTER TABLE staff DROP CONSTRAINT fk_staff_address;
-ALTER TABLE staff DROP CONSTRAINT fk_staff_store;
 ALTER TABLE staff NOCHECK CONSTRAINT fk_staff_address;
 ALTER TABLE staff NOCHECK CONSTRAINT fk_staff_store;
 ALTER TABLE store NOCHECK CONSTRAINT fk_store_staff;
@@ -27,8 +25,8 @@ DELETE FROM film_actor ;
 DELETE FROM inventory ;
 DELETE FROM film ;
 DELETE FROM category ;
-DELETE FROM ADDRESS;
-DELETE FROM CITY;
+DELETE FROM address;
+DELETE FROM city;
 ALTER TABLE store ALTER COLUMN manager_staff_id TINYINT NULL;
 update store set manager_staff_id=null;
 DELETE FROM staff ;

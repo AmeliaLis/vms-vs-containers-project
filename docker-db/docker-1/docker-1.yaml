@@ -39,7 +39,7 @@
 
     - name:
       win_shell: |
-        docker inspect --format='{''{ .NetworkSettings.IPAddress }''}' mysql-container-test
+        "docker inspect --format='{''{ .NetworkSettings.IPAddress }''}' mysql-container-test"
       register: host_ip 
     
     - name: Create Database in MySQL Container

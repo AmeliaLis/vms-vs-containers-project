@@ -117,8 +117,10 @@ Run playbook:
 
 ## Next steps
 
-- add ansible step to execute sql files on mssql
 - next steps to DOCKER! - think about bash script to run sql files - just to automate the process
+- # Copy SQL files to the running container
+docker cp "C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db" mysql_container:/sql_files
+
 - create ansible playbooks to run seperate bashscript with execution on docker instances - just to have timings, thanks to the ansible callbacks 
 
 
@@ -126,6 +128,8 @@ Run playbook:
 2. Configure postgress on VM2 - DONE
 3. Configure oracle db on VM3 - DONE - https://www.oracle.com/database/technologies/databaseappdev-vm.html
 4. Configure Microsoft SQL Server - DONE
+
+5. Docker mysql - almost DONE
 
 https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver16&tabs=ubuntu2004 , https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-deploy-ansible?view=sql-server-ver16 , https://www.youtube.com/watch?v=1Qlf_xwFz7Y , https://galaxy.ansible.com/ui/repo/published/microsoft/sql/docs/
 

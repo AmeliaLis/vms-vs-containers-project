@@ -1,4 +1,5 @@
 -- Delete data
+SET foreign_key_checks = 0
 ALTER TABLE staff DROP FOREIGN KEY fk_staff_store , DROP FOREIGN KEY fk_staff_address;
 DELETE FROM payment ;
 DELETE FROM rental ;

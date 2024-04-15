@@ -37,9 +37,9 @@
     #     delay: 10
     #     timeout: 60
     
-    - name: Create Database in MySQL Container
-      win_shell: |
-        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -e 'CREATE DATABASE sakila;'"
+    # - name: Create Database in MySQL Container
+    #   win_shell: |
+    #     docker exec mysql-container-test sh -c "mysql -u root -padmin123 -e 'CREATE DATABASE sakila;'"
     
     - name: Create MySQL database within Docker container
       docker_container:

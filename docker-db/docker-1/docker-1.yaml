@@ -38,8 +38,8 @@
     #     timeout: 60
 
     - name:
-      shell: |
-        docker inspect --format='{''{.NetworkSettings.IPAddress}''}' mysql-container-test
+      win_shell: |
+        docker inspect --format='{''{ .NetworkSettings.IPAddress }''}' mysql-container-test
       register: host-ip
     
     - name: Create Database in MySQL Container

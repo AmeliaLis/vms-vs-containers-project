@@ -9,7 +9,8 @@
 
     - name: Build image
       win_shell: |
-        docker build -t mysql-container:test -f C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\Dockerfile
+        cd "C:\Users\DELL\Desktop\licencjat\bachelor\docker-db"
+        docker build -t mysql-container:test -f "docker-db\docker-1\Dockerfile"
     
     # - name: Start MySQL Container
     #   win_shell: |

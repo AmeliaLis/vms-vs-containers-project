@@ -39,14 +39,14 @@
 
     - name:
       win_shell: |
-        docker inspect mysql-container-test -f '{{ .NetworkSettings.Networks.$network.IPAddress }}'
+        docker inspect --format='{{.NetworkSettings.IPAddress}}' mysql-container-test
       register: host-ip
     
     - name: Create Database in MySQL Container
       win_shell: |
-        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h {{ host-ip.stdout_lines[0] }} -e 'CREATE DATABASE sakila;'"
+        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h {{ host-ip }} -e 'CREATE DATABASE sakila;'"
   
     - name: Run SQL Files in MySQL Container
       win_shell: |
-        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h {{ host-ip.stdout_lines[0] }} sakila < /tmp/mysq-sakila-db/mysql-sakila-schema.sql"
+        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h {{ host-ip }} sakila < /tmp/mysq-sakila-db/mysql-sakila-schema.sql"
 

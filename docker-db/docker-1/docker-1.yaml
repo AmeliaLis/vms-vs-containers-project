@@ -17,7 +17,11 @@
 
     - name: Enable remote login to MySQL
       win_shell: |
-        docker exec mysql-container sh -c "echo 'bind-address = 0.0.0.0' >> /etc/mysql/mysql.conf.d/mysqld.cnf"
+        docker exec mysql-container sh -c "echo 'bind-address = 0.0.0.0' >> /etc/mysql/my.cnf"
+
+    - name: Restart MySQL service
+      win_shell: |
+        docker exec mysql-container service mysql restart
 
 
     # - name: Wait for MySQL Service to Start

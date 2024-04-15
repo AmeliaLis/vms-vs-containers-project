@@ -42,22 +42,22 @@
     #     docker inspect --format='{''{ .NetworkSettings.IPAddress }''}' mysql-container-test
     #   register: host_ip 
     
-    - name: Create Database in MySQL Container
-      win_shell: |
-        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -e 'CREATE DATABASE sakila;'"
+    # - name: Create Database in MySQL Container
+    #   win_shell: |
+    #     docker exec mysql-container-test sh -c "mysql -u root -padmin123 -e 'CREATE DATABASE sakila;'"
   
-    - name: Run sql schema
-      win_shell: |
-        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 sakila < /tmp/mysq-sakila-db/mysql-sakila-schema.sql"
+    # - name: Run sql schema
+    #   win_shell: |
+    #     docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 sakila < /tmp/mysq-sakila-db/mysql-sakila-schema.sql"
 
-    - name: Run insert data
-      win_shell: |
-        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 sakila < /tmp/mysq-sakila-db/mysql-insert-data.sql"
+    # - name: Run insert data
+    #   win_shell: |
+    #     docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 sakila < /tmp/mysq-sakila-db/mysql-insert-data.sql"
 
-    - name: Run delete data
-      win_shell: |
-        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 sakila < /tmp/mysq-sakila-db/mysql-delete-data.sql"
+    # - name: Run delete data
+    #   win_shell: |
+    #     docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 sakila < /tmp/mysq-sakila-db/mysql-delete-data.sql"
 
-    - name: Run delete schema
-      win_shell: |
-        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 sakila < /tmp/mysq-sakila-db/mysql-drop-objects.sql"
+    # - name: Run delete schema
+    #   win_shell: |
+    #     docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 sakila < /tmp/mysq-sakila-db/mysql-drop-objects.sql"

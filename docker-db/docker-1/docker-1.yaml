@@ -1,8 +1,8 @@
 - name: Start Oracle VMS
   hosts: windows
-  become: yes
   gather_facts: no
-  tasks:    
+  tasks:
+
     - name: Pull mysql image
       win_shell: |
         docker pull mysql:latest

@@ -38,7 +38,7 @@
     #     timeout: 60
 
     - name:
-      win_shell: |
+      shell: |
         docker inspect --format='{{.NetworkSettings.IPAddress}}' mysql-container-test
       register: host-ip
     

@@ -3,9 +3,13 @@
   gather_facts: no
   tasks:
 
-    - name: Pull mysql image
+    # - name: Pull mysql image
+    #   win_shell: |
+    #     docker pull mysql:latest
+
+    - name: Build image
       win_shell: |
-        docker pull mysql:latest
+        docker build -t mysql-container:test C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\Dockerfile
     
     # - name: Start MySQL Container
     #   win_shell: |
@@ -13,15 +17,15 @@
 
     - name: Attach volume and files to MySQL Container
       win_shell: |
-        docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=admin123 -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db:/tmp/mysq-sakila-db mysql:latest
+        docker run -d --name mysql-container-test -e MYSQL_ROOT_PASSWORD=admin123 -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db:/tmp/mysq-sakila-db mysql-container:test
 
-    - name: Enable remote login to MySQL
-      win_shell: |
-        docker exec mysql-container sh -c "echo 'bind-address = 0.0.0.0' >> /etc/mysql/my.cnf"
+    # - name: Enable remote login to MySQL
+    #   win_shell: |
+    #     docker exec mysql-container sh -c "echo 'bind-address = 0.0.0.0' >> /etc/mysql/my.cnf"
 
-    - name: Restart MySQL service
-      win_shell: |
-        docker exec mysql-container service mysql restart
+    # - name: Restart MySQL service
+    #   win_shell: |
+    #     docker exec mysql-container service mysql restart
 
 
     # - name: Wait for MySQL Service to Start
@@ -33,9 +37,9 @@
     
     - name: Create Database in MySQL Container
       win_shell: |
-        docker exec mysql-container sh -c "mysql -u root -padmin123 -e 'CREATE DATABASE sakila;'"
+        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -e 'CREATE DATABASE sakila;'"
 
     - name: Run SQL Files in MySQL Container
       win_shell: |
-        docker exec mysql-container sh -c "mysql -u root -padmin123 sakila < /tmp/mysq-sakila-db/mysql-sakila-schema.sql"
+        docker exec mysql-container-test sh -c "mysql -u root -padmin123 sakila < /tmp/mysq-sakila-db/mysql-sakila-schema.sql"
 

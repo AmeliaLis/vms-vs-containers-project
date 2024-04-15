@@ -44,7 +44,7 @@
     
     - name: Create Database in MySQL Container
       win_shell: |
-        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 -e 'CREATE DATABASE sakila;'"
+        docker exec mysql-container-test sh "mysql -u root -padmin123 -h 172.17.0.2 -e 'CREATE DATABASE sakila;'"
   
     - name: Run sql schema
       win_shell: |

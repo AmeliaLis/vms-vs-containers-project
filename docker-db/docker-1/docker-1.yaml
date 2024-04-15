@@ -15,6 +15,11 @@
       win_shell: |
         docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=admin123 -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db:/tmp/mysq-sakila-db mysql:latest
 
+    - name: Enable remote login to MySQL
+      win_shell: |
+        docker exec mysql-container sh -c "echo 'bind-address = 0.0.0.0' >> /etc/mysql/mysql.conf.d/mysqld.cnf"
+
+
     # - name: Wait for MySQL Service to Start
     #   wait_for:
     #     host: localhost
@@ -24,9 +29,9 @@
     
     - name: Create Database in MySQL Container
       win_shell: |
-        docker exec mysql-container mysql -u root -padmin123 -e "CREATE DATABASE sakila;"
+        docker exec mysql-container sh -c "mysql -u root -padmin123 -e 'CREATE DATABASE sakila;'"
 
     - name: Run SQL Files in MySQL Container
       win_shell: |
-        docker exec mysql-container mysql -u root -padmin123 < /tmp/mysq-sakila-db/mysql-sakila-schema.sql
+        docker exec mysql-container sh -c "mysql -u root -padmin123 sakila < /tmp/mysq-sakila-db/mysql-sakila-schema.sql"
 

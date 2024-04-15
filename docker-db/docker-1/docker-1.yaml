@@ -2,15 +2,15 @@
   hosts: windows
   gather_facts: no
   tasks:    
-    - name: Run PowerShell script
+    - name: Pull mysql image
       win_shell: |
         docker pull mysql:latest
     
-    - name: Start MySQL Container
-      win_shell: |
-        docker run -d --name mysql_container -e MYSQL_ROOT_PASSWORD=admin123 mysql:latest
+    # - name: Start MySQL Container
+    #   win_shell: |
+    #     docker run -d --name mysql_container -e MYSQL_ROOT_PASSWORD=admin123 mysql:latest
 
-    - name: Copy Files to MySQL Container
+    - name: Attach volume and files to MySQL Container
       win_shell: |
         docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=admin123 -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db:/tmp/mysq-sakila-db my-sql:latest
 
@@ -23,11 +23,11 @@
     
     - name: Create Database in MySQL Container
       win_shell: |
-        docker exec mysql_container mysql -uroot -pyour_root_password -e "CREATE DATABASE your_database_name;"
+        docker exec mysql_container mysql -uroot -padmin123 -e "CREATE DATABASE sakila;"
       delegate_to: localhost
 
     - name: Run SQL Files in MySQL Container
       win_shell: |
-        docker exec mysql_container mysql -uroot -padmin123 < /path/in/container/your_sql_file.sql
+        docker exec mysql_container mysql -uroot -padmin123 < /tmp/mysq-sakila-db/mysql-sakila-schema.sql
       delegate_to: localhost
 

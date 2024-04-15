@@ -8,9 +8,10 @@
     #     docker pull mysql:latest
 
     - name: Build image
-      chdir: C:\Users\DELL\Desktop\licencjat\bachelor\docker-db
       win_shell: |
         docker build -t mysql-container:test -f "docker-db\docker-1\Dockerfile"
+      args:
+        chdir: C:\Users\DELL\Desktop\licencjat\bachelor\docker-db
     
     # - name: Start MySQL Container
     #   win_shell: |

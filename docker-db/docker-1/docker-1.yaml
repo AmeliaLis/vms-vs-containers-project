@@ -36,8 +36,15 @@
     #     port: 3306
     #     delay: 10
     #     timeout: 60
+    
+    - name: Get infos on container
+      docker_container_info:
+        name: mysql-container-test
+      register: result
+    - debug:
+        msg : result['container']['NetworkSettings']['IPAddress']
 
-    - name:
+    - name: Get ip
       win_shell: |
         "docker inspect --format='{''{ .NetworkSettings.IPAddress }''}' mysql-container-test"
       register: host_ip 

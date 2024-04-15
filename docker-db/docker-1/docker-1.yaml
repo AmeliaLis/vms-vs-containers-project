@@ -13,7 +13,7 @@
 
     - name: Attach volume and files to MySQL Container
       win_shell: |
-        docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=admin123 -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db:/tmp/mysq-sakila-db my-sql:latest
+        docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=admin123 -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db:/tmp/mysq-sakila-db mysql:latest
 
     - name: Wait for MySQL Service to Start
       wait_for:

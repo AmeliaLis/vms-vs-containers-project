@@ -40,7 +40,7 @@
     - name:
       win_shell: |
         docker inspect --format='{''{ .NetworkSettings.IPAddress }''}' mysql-container-test
-      register: host-ip
+      register: host-ip.stdout 
     
     - name: Create Database in MySQL Container
       win_shell: |

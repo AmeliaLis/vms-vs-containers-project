@@ -15,12 +15,12 @@
       win_shell: |
         docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=admin123 -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db:/tmp/mysq-sakila-db mysql:latest
 
-    - name: Wait for MySQL Service to Start
-      wait_for:
-        host: localhost
-        port: 3306
-        delay: 10
-        timeout: 60
+    # - name: Wait for MySQL Service to Start
+    #   wait_for:
+    #     host: localhost
+    #     port: 3306
+    #     delay: 10
+    #     timeout: 60
     
     - name: Create Database in MySQL Container
       win_shell: |

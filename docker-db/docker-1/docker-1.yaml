@@ -3,23 +3,23 @@
   gather_facts: no
   tasks:
 
-    # - name: Pull mysql image
-    #   win_shell: |
-    #     docker pull mysql:latest
+    - name: Pull mysql image
+      win_shell: |
+        docker pull mysql:latest
 
-    # - name: Build image
-    #   win_shell: |
-    #     docker build -t mysql-container:test .
-    #   args:
-    #     chdir: C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1
+    - name: Build image
+      win_shell: |
+        docker build -t mysql-container:test .
+      args:
+        chdir: C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1
     
     # # - name: Start MySQL Container
     # #   win_shell: |
     # #     docker run -d --name mysql_container -e MYSQL_ROOT_PASSWORD=admin123 mysql:latest
 
-    # - name: Attach volume and files to MySQL Container
-    #   win_shell: |
-    #     docker run -d --name mysql-container-test -e MYSQL_ROOT_PASSWORD=admin123 -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db:/tmp/mysql-sakila-db mysql-container:test
+    - name: Attach volume and files to MySQL Container
+      win_shell: |
+        docker run -d --name mysql-container-test -e MYSQL_ROOT_PASSWORD=admin123 -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db:/tmp/mysql-sakila-db mysql-container:test
 
     # - name: Enable remote login to MySQL
     #   win_shell: |
@@ -36,19 +36,17 @@
     #     port: 3306
     #     delay: 10
     #     timeout: 60
+
+    - name:
+      win_shell: |
+        docker inspect mysql-container-test -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
+      register: host-ip
     
     - name: Create Database in MySQL Container
       win_shell: |
-        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 -e 'CREATE DATABASE sakila;'"
-    
-    # - name: Create MySQL database within Docker container
-    #   docker_container:
-    #     name: mysql-container-test
-    #     exec:
-    #       cmd: mysql -u root -padmin123 -e 'CREATE DATABASE sakila;'
-
-
+        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h {{ host-ip }} -e 'CREATE DATABASE sakila;'"
+  
     - name: Run SQL Files in MySQL Container
       win_shell: |
-        docker exec mysql-container-test sh -c "mysql -u root -padmin123 sakila < /tmp/mysq-sakila-db/mysql-sakila-schema.sql"
+        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h {{ host-ip }} sakila < /tmp/mysq-sakila-db/mysql-sakila-schema.sql"
 

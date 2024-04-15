@@ -19,7 +19,7 @@
 
     - name: Attach volume and files to MySQL Container
       win_shell: |
-        docker run -d --name mysql-container-test -e MYSQL_ROOT_PASSWORD=admin123 -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db:/tmp/mysq-sakila-db mysql-container:test
+        docker run -d --name mysql-container-test -e MYSQL_ROOT_PASSWORD=admin123 -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db:/tmp/mysql-sakila-db mysql-container:test
 
     # - name: Enable remote login to MySQL
     #   win_shell: |
@@ -40,6 +40,13 @@
     - name: Create Database in MySQL Container
       win_shell: |
         docker exec mysql-container-test sh -c "mysql -u root -padmin123 -e 'CREATE DATABASE sakila;'"
+    
+    - name: Create MySQL database within Docker container
+      docker_container:
+        name: mysql-container-test
+        exec:
+          cmd: mysql -u root -padmin123 -e 'CREATE DATABASE sakila;'
+
 
     - name: Run SQL Files in MySQL Container
       win_shell: |

@@ -24,7 +24,7 @@
     
     - name: Create Database in MySQL Container
       win_shell: |
-        docker exec mysql-container mysql -u root -padmin123 -h localhost -e "CREATE DATABASE sakila;"
+        docker exec mysql-container mysql -u root -padmin123 -e "CREATE DATABASE sakila;"
 
     - name: Run SQL Files in MySQL Container
       win_shell: |

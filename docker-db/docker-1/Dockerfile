@@ -5,7 +5,3 @@ COPY custom_entrypoint.sh /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/custom_entrypoint.sh
 RUN /usr/local/bin/custom_entrypoint.sh
-RUN apk update && \
-    apk add mysql-client && \
-    apk add --no-cache mysql-server && \
-    rm -rf /var/cache/apk/*

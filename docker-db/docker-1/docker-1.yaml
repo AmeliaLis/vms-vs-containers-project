@@ -36,24 +36,28 @@
     #     port: 3306
     #     delay: 10
     #     timeout: 60
-    
-    - name: Get infos on container
-      docker_container_info:
-        name: mysql-container-test
-      register: result
-    - debug:
-        msg : result['container']['NetworkSettings']['IPAddress']
 
-    - name: Get ip
-      win_shell: |
-        "docker inspect --format='{''{ .NetworkSettings.IPAddress }''}' mysql-container-test"
-      register: host_ip 
+    # - name: Get ip
+    #   win_shell: |
+    #     docker inspect --format='{''{ .NetworkSettings.IPAddress }''}' mysql-container-test
+    #   register: host_ip 
     
     - name: Create Database in MySQL Container
       win_shell: |
-        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h {{ host_ip }} -e 'CREATE DATABASE sakila;'"
+        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 -e 'CREATE DATABASE sakila;'"
   
-    - name: Run SQL Files in MySQL Container
+    - name: Run sql schema
       win_shell: |
-        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h {{ host_ip }} sakila < /tmp/mysq-sakila-db/mysql-sakila-schema.sql"
+        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 sakila < /tmp/mysq-sakila-db/mysql-sakila-schema.sql"
 
+    - name: Run insert data
+      win_shell: |
+        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 sakila < /tmp/mysq-sakila-db/mysql-insert-data.sql"
+
+    - name: Run delete data
+      win_shell: |
+        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 sakila < /tmp/mysq-sakila-db/mysql-delete-data.sql"
+
+    - name: Run delete schema
+      win_shell: |
+        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 sakila < /tmp/mysq-sakila-db/mysql-drop-objects.sql"

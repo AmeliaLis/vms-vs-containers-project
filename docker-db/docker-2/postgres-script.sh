@@ -3,24 +3,19 @@
 TIMEFORMAT='Elapsed time is %R seconds.'
 
 # Redirecting the output of time commands to a temporary file
-tmpfile="/c/Users/DELL/Desktop/licencjat/bachelor/docker-db/docker-2/temp_file.txt"
+tmpfile="/c/Users/DELL/Desktop/licencjat/bachelor/docker-db/docker-2/temp_file_2.txt"
 
+{
+    time docker exec postgres-container-test sh -c "PGPASSWORD=admin123 psql -U sakila -c '\i /tmp/postgres-sakila-db/postgres-sakila-schema.sql'"
+} 2>&1 | tee -a "$tmpfile"
 
-time {
-    docker exec postgres-container-test sh -c "PGPASSWORD=admin123 psql -U sakila -c '\i /tmp/postgres-sakila-db/postgres-sakila-schema.sql'" | tee -a "$tmpfile"
-}
+# Redirecting all subsequent commands' output to the same file
+exec 1>>"$tmpfile" 2>&1
 
-time {
-    docker exec postgres-container-test sh -c "PGPASSWORD=admin123 psql -U sakila -c '\i /tmp/postgres-sakila-db/postgres-sakila-insert-data.sql'" | tee -a "$tmpfile"
-}
-
-time {
-    docker exec postgres-container-test sh -c "PGPASSWORD=admin123 psql -U sakila -c '\i /tmp/postgres-sakila-db/postgres-sakila-delete-data.sql'" | tee -a "$tmpfile"
-}
-
-time {
-    docker exec postgres-container-test sh -c "PGPASSWORD=admin123 psql -U sakila -c '\i /tmp/postgres-sakila-db/postgres-sakila-drop-objects.sql'" | tee -a "$tmpfile"
-}
+# Uncomment the following lines if you want to include the output of other commands as well
+time docker exec postgres-container-test sh -c "PGPASSWORD=admin123 psql -U sakila -c '\i /tmp/postgres-sakila-db/postgres-sakila-insert-data.sql'"
+time docker exec postgres-container-test sh -c "PGPASSWORD=admin123 psql -U sakila -c '\i /tmp/postgres-sakila-db/postgres-sakila-delete-data.sql'"
+time docker exec postgres-container-test sh -c "PGPASSWORD=admin123 psql -U sakila -c '\i /tmp/postgres-sakila-db/postgres-sakila-drop-objects.sql'"
 
 # Printing only the timing information at the end
-cat "$tmpfile" 
+cat "$tmpfile"

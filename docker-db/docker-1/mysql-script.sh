@@ -21,3 +21,7 @@ time {
 time {
     docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 127.0.0.1 -P3306 sakila < /tmp/mysql-sakila-db/mysql-sakila-drop-objects.sql"
 }
+
+time {
+    docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 127.0.0.1 -P3306 -e 'DROP DATABASE sakila;'"
+}

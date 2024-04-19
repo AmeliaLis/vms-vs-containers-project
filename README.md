@@ -33,6 +33,8 @@ network:
         - 192.168.0.116/24
       gateway4: 192.168.0.1
 ```
+sudo apt update
+sudo apt install python3-psycopg2
 
 ### VM3 - ORACLE DB HOST
 ```
@@ -89,9 +91,9 @@ network:
     - https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui
     - https://forums.virtualbox.org/viewtopic.php?t=104814
 
-5. vim /etc/ansible/ansible.cfg `[defaults] callbacks_enabled=profile_tasks`
+5. vim /etc/ansible/ansible.cfg `[defaults] callbacks_enabled=profile_tasks` -> it enables to check the timinings
 
-Sample Playbook:
+### Sample Playbook:
 ```
 - name: Run echo command on VM
   hosts: dbserver
@@ -110,55 +112,49 @@ Hosts:
 [dbserver]
 192.168.0.118
 ```
-Run playbook:
+### How to Run playbook:
 
 `ansible-playbook playbook.yml -i inventory.ini --extra-vars "ansible_sudo_pass=yourPassword"`
 `ansible-playbook -i /home/amelia_user/hosts.ini ./vm-4/db-vm4.yaml -kK` - it will ask for sudo password
 
-## Next steps
 
-- next steps to DOCKER! - think about bash script to run sql files - just to automate the process
-- # Copy SQL files to the running container
-docker cp "C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db" mysql_container:/sql_files
+# VIRTUAL BOX COMMANDS
 
-- create ansible playbooks to run seperate bashscript with execution on docker instances - just to have timings, thanks to the ansible callbacks 
+VBoxManage metrics query db-machine-2 /CPU/Load/User,CPU/Load/Kernel
+
+# VM COMMANDS
+
+show processlist
+df -h
 
 
-1. Configure mysql on VM1 - DONE - show processlist
-2. Configure postgress on VM2 - DONE
-3. Configure oracle db on VM3 - DONE - https://www.oracle.com/database/technologies/databaseappdev-vm.html
-4. Configure Microsoft SQL Server - DONE
+# POSTGRESSQL 
 
-5. Docker mysql - almost DONE
-
-https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver16&tabs=ubuntu2004 , https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-deploy-ansible?view=sql-server-ver16 , https://www.youtube.com/watch?v=1Qlf_xwFz7Y , https://galaxy.ansible.com/ui/repo/published/microsoft/sql/docs/
-
-5. Miscorsoft sql server has been installed on 192.168.0.118 connect via
- sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C 
-
- https://learn.microsoft.com/en-us/sql/tools/sqlcmd/sqlcmd-run-transact-sql-script-files?view=sql-server-ver16
-
-6. postgresql https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
+https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
 
 amelia_user@db-machine:~$ sudo -i -u postgres
 amelia_user@db-machine:~$ sudo -u amelia_user psql
 psql (12.18 (Ubuntu 12.18-0ubuntu0.20.04.1))
 \l    - display list of databases
-
-Postgres db
-sudo apt update
-sudo apt install python3-psycopg2
+\dt schema_name.*
 
 
-VBoxManage metrics query db-machine-2 /CPU/Load/User,CPU/Load/Kernel
+# SQL SERVER
 
+- https://learn.microsoft.com/en-us/sql/tools/sqlcmd/sqlcmd-run-transact-sql-script-files?view=sql-server-ver16
+- https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver16&tabs=ubuntu2004
+- https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-deploy-ansible?view=sql-server-ver16 
+- https://www.youtube.com/watch?v=1Qlf_xwFz7Y 
+- https://galaxy.ansible.com/ui/repo/published/microsoft/sql/docs/
+
+sql server has been installed on 192.168.0.118 connect via
+sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C 
 
 USE master; -- Make sure you are in the master database context
 GO
 
 -- Query to get the list of databases
 SELECT name, database_id, create_date, state_desc FROM sys.databases;
-
 
 USE YourDatabaseName; -- Replace YourDatabaseName with the name of the database you want to check
 GO
@@ -170,8 +166,38 @@ SELECT schema_name(schema_id) AS schema_name,
        modify_date
 FROM sys.tables;
 
-
-SELECT c.name AS column_name, t.name AS data_type,c.max_length,c.precision,c.scale,c.is_nullable,c.is_identity,ISNULL(i.is_primary_key, 0) AS is_primary_key FROM sys.columns c INNER JOIN sys.types t ON c.system_type_id = t.system_type_id AND c.user_type_id = t.user_type_id LEFT JOIN sys.indexes i ON c.object_id = i.object_id AND i.is_primary_key = 1 WHERE c.object_id = OBJECT_ID('staff');
-
-
 SELECT staff_id,CONCAT(first_name, ' ', last_name) AS full_name,email,CASE WHEN active = 1 THEN 'Active'ELSE 'Inactive'END AS status,last_update FROM staff;
+
+
+
+# oracle
+
+- https://www.oracle.com/database/technologies/databaseappdev-vm.html
+
+- go to the directory where the files at
+- connect with the host sql system/oracle@localhost:1521/free
+- run sql scripts @oracle-sakila-...
+- SELECT username FROM dba_users;
+- SELECT table_name FROM user_tables;
+- SELECT COUNT(*) FROM CITY;
+- SELECT USER FROM DUAL;
+- SELECT sequence_name, sequence_owner FROM all_sequences;
+
+## Next steps
+
+- next steps to DOCKER! - think about bash script to run sql files - just to automate the process
+- Copy SQL files to the running container
+docker cp "C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db" mysql_container:/sql_files
+
+- create ansible playbooks to run seperate bashscript with execution on docker instances - just to have timings, thanks to the ansible callbacks 
+- check if the db has to be dropped like in mysql case
+
+
+1. Configure mysql on VM1 - DONE -> check timings
+2. Configure postgress on VM2 - DONE
+3. Configure oracle db on VM3 - DONE 
+4. Configure Microsoft SQL Server - DONE
+5. Docker mysql - DONE 
+6. Docker postgres - DONE 
+7. Docker ORACLE - tbd 
+8. Docker MSSQL - tbd 

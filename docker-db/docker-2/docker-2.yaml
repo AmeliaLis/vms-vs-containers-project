@@ -11,9 +11,9 @@
       win_shell: |
         docker run -d --name postgres-container-test -e POSTGRES_USER=sakila -e POSTGRES_PASSWORD=admin123 -e POSTGRES_DB=sakila -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-2\postgres-sakila-db:/tmp/postgres-sakila-db postgres:latest
 
-    - name: Run postgres-script.sh
-      win_shell: |
-        bash /c/Users/DELL/Desktop/licencjat/bachelor/docker-db/docker-2/postgres-script.sh
+    # - name: Run postgres-script.sh
+    #   win_shell: |
+    #     bash /c/Users/DELL/Desktop/licencjat/bachelor/docker-db/docker-2/postgres-script.sh
 
 
     # - name: Get ip

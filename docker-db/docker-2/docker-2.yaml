@@ -13,9 +13,7 @@
 
     - name: Run postgres-script.sh
       win-shell: |
-        sh postgres-script.sh
-      args:
-        chdir: C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-2
+        bash /c/Users/DELL/Desktop/licencjat/bachelor/docker-db/docker-2/postgres-script.sh
 
 
     # - name: Get ip

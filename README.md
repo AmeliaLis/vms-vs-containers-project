@@ -143,6 +143,7 @@ https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?vi
 amelia_user@db-machine:~$ sudo -i -u postgres
 amelia_user@db-machine:~$ sudo -u amelia_user psql
 psql (12.18 (Ubuntu 12.18-0ubuntu0.20.04.1))
+\l    - display list of databases
 
 Postgres db
 sudo apt update

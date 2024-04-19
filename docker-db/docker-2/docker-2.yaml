@@ -3,31 +3,20 @@
   gather_facts: no
   tasks:
 
-    - name: Pull mysql image
+    - name: Pull postgres image
       win_shell: |
-        docker pull mysql:latest
-
-    - name: Build image
-      win_shell: |
-        docker build -t mysql-container:test .
-      args:
-        chdir: C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1
+        docker pull postgres:latest
 
     - name: Attach volume and files to MySQL Container
       win_shell: |
-        docker run -d --name mysql-container-test -e MYSQL_ROOT_PASSWORD=admin123 -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db:/tmp/mysql-sakila-db mysql-container:test
+        docker run -d --name postgres-container-test -e POSTGRES_USER=sakila POSTGRES_PASSWORD=admin123 POSTGRES_DB=sakila -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-2\postgres-sakila-db:/tmp/postgres-sakila-db postgres:latest
 
-    # - name: Restart MySQL service
-    #   win_shell: |
-    #     docker exec mysql-container service mysql restart
+    - name: Run postgres-script.sh
+      win-shell: |
+        sh postgres-script.sh
+      args:
+        chdir: C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-2
 
-
-    # - name: Wait for MySQL Service to Start
-    #   wait_for:
-    #     host: localhost
-    #     port: 3306
-    #     delay: 10
-    #     timeout: 60
 
     # - name: Get ip
     #   win_shell: |

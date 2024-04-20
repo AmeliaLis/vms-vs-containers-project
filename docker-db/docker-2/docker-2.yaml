@@ -1,4 +1,4 @@
-- name: Start POSTGRESSQL VMS
+- name: Start POSTGRESSQL container
   hosts: windows
   gather_facts: no
   tasks:
@@ -7,36 +7,6 @@
       win_shell: |
         docker pull postgres:latest
 
-    - name: Attach volume and files to MySQL Container
+    - name: Attach volume and files to postgres Container
       win_shell: |
         docker run -d --name postgres-container-test -e POSTGRES_USER=sakila -e POSTGRES_PASSWORD=admin123 -e POSTGRES_DB=sakila -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-2\postgres-sakila-db:/tmp/postgres-sakila-db postgres:latest
-
-    # - name: Run postgres-script.sh
-    #   win_shell: |
-    #     bash /c/Users/DELL/Desktop/licencjat/bachelor/docker-db/docker-2/postgres-script.sh
-
-
-    # - name: Get ip
-    #   win_shell: |
-    #     docker inspect --format='{''{ .NetworkSettings.IPAddress }''}' mysql-container-test
-    #   register: host_ip 
-    
-    # - name: Create Database in MySQL Container
-    #   win_shell: |
-    #     docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 127.0.0.1 -P3306 -e 'CREATE DATABASE sakila;'"
-  
-    # - name: Run sql schema
-    #   win_shell: |
-    #     docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 127.0.0.1 -P3306 sakila < /tmp/mysql-sakila-db/mysql-sakila-schema.sql"
-
-    # - name: Run insert data
-    #   win_shell: |
-    #     docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 127.0.0.1 -P3306 sakila < /tmp/mysql-sakila-db/mysql-sakila-insert-data.sql"
-
-    # - name: Run delete data
-    #   win_shell: |
-    #     docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 127.0.0.1 -P3306 sakila < /tmp/mysql-sakila-db/mysql-sakila-delete-data.sql"
-
-    # - name: Run delete schema
-    #   win_shell: |
-    #     docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 sakila < /tmp/mysql-sakila-db/mysql-sakila-drop-objects.sql"

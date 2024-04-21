@@ -1,0 +1,30 @@
+TEST 1
+START Elapsed time is 0,853 seconds.
+SCHEMA Elapsed time is 1,202 seconds.
+INSERT Elapsed time is 250,947 seconds.
+DELETE Elapsed time is 2,263 seconds.
+DROP Elapsed time is 0,333 seconds.
+
+
+TEST 2
+START Elapsed time is 0,801 seconds.
+SCHEMA Elapsed time is 1,109 seconds.
+INSERT Elapsed time is 250,936 seconds.
+DELETE Elapsed time is 2,465 seconds.
+DROP Elapsed time is 0,338 seconds.
+
+TEST 3
+START Elapsed time is 0,934 seconds.
+SCHEMA Elapsed time is 1,012 seconds.
+INSERT Elapsed time is 256,971 seconds.
+DELETE Elapsed time is 2,274 seconds.
+DROP Elapsed time is 0,321 seconds.
+
+TEST 4
+PULL Elapsed time is 158,154 seconds.
+START Elapsed time is 1,831 seconds.
+SCHEMA Elapsed time is 1,019 seconds.
+INSERT Elapsed time is 253,502 seconds.
+DELETE Elapsed time is 2,856 seconds.
+DROP Elapsed time is 0,389 seconds.
+

@@ -149,7 +149,7 @@ psql (12.18 (Ubuntu 12.18-0ubuntu0.20.04.1))
 
 sql server has been installed on 192.168.0.118 connect via
 sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C 
-
+/opt/mssql-tools/bin/sqlcmd -S 127.0.0.1 -U amelia_user -P Admin123! -C 
 USE master; -- Make sure you are in the master database context
 GO
 
@@ -160,13 +160,7 @@ USE YourDatabaseName; -- Replace YourDatabaseName with the name of the database 
 GO
 
 -- Query to get the list of tables in the specified database
-SELECT schema_name(schema_id) AS schema_name,
-       name AS table_name,
-       create_date,
-       modify_date
-FROM sys.tables;
-
-SELECT staff_id,CONCAT(first_name, ' ', last_name) AS full_name,email,CASE WHEN active = 1 THEN 'Active'ELSE 'Inactive'END AS status,last_update FROM staff;
+SELECT schema_name(schema_id) AS schema_name,name AS table_name,create_date,modify_date FROM sys.tables;
 
 
 
@@ -194,10 +188,10 @@ docker cp "C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sak
 
 
 1. Configure mysql on VM1 - DONE -> check timings
-2. Configure postgress on VM2 - DONE
-3. Configure oracle db on VM3 - DONE 
-4. Configure Microsoft SQL Server - DONE
+2. Configure postgress on VM2 - DONE - RERUN
+3. Configure oracle db on VM3 - DONE - RERUN
+4. Configure Microsoft SQL Server - DONE - RERUN
 5. Docker mysql - DONE 
 6. Docker postgres - DONE 
-7. Docker ORACLE - tbd 
-8. Docker MSSQL - tbd 
+7. Docker ORACLE - DONE
+8. Docker MSSQL - DONE 

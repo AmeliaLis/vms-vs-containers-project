@@ -1,3 +1,4 @@
+SET sql_mode = '';
 -- Drop Views
 
 DROP VIEW customer_list;

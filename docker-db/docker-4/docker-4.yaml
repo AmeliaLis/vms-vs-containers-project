@@ -2,7 +2,6 @@
   hosts: windows
   gather_facts: no
   tasks:
-
     - name: Pull MSSQL image
       win_shell: |
         docker pull mcr.microsoft.com/mssql/server:2022-latest

@@ -32,14 +32,14 @@ DROP TABLE language;
 DROP TABLE customer;
 DROP TABLE actor;
 DROP TABLE category;
-ALTER TABLE staff DROP CONSTRAINT fk_staff_address;
-ALTER TABLE store DROP CONSTRAINT fk_store_staff;
-ALTER TABLE staff DROP CONSTRAINT fk_staff_store;
 DROP TABLE store;
 DROP TABLE address;
 DROP TABLE staff;
 DROP TABLE city;
 DROP TABLE country;
+-- ALTER TABLE staff DROP CONSTRAINT fk_staff_address;
+-- ALTER TABLE store DROP CONSTRAINT fk_store_staff;
+-- ALTER TABLE staff DROP CONSTRAINT fk_staff_store;
 
 -- Procedures and views
 --drop procedure film_in_stock;

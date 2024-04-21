@@ -1,1 +1,0 @@
-VBoxManage controlvm db-machine-2 savestate

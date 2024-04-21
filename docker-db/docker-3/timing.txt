@@ -1,4 +1,5 @@
 TEST 1
+PULL Elapsed time is 542,140 seconds.
 SCHEMA Elapsed time is 2,790 seconds.
 INSERT Elapsed time is 154,119 seconds.
 DELETE Elapsed time is 14,962 seconds.

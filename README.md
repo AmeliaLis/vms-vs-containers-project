@@ -187,11 +187,24 @@ docker cp "C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sak
 - check if the db has to be dropped like in mysql case
 
 
-1. Configure mysql on VM1 - DONE -> check timings
-2. Configure postgress on VM2 - DONE - RERUN
-3. Configure oracle db on VM3 - DONE - RERUN
-4. Configure Microsoft SQL Server - DONE - RERUN
+1. Configure mysql on VM1 - DONE - RERUN on ansible / write script for win host (without latency)
+2. Configure postgress on VM2 - DONE - RERUN on ansible / write script for win host (without latency)
+3. Configure oracle db on VM3 - DONE - RERUN on ansible / write script for win host (without latency)
+4. Configure Microsoft SQL Server - DONE - RERUN on ansible / write script for win host (without latency)
 5. Docker mysql - DONE 
 6. Docker postgres - DONE 
 7. Docker ORACLE - DONE
 8. Docker MSSQL - DONE 
+
+
+
+[defaults]
+inventory = ./hosts
+callbacks_enabled = timer, profile_tasks, profile_roles
+
+add it ^
+ gather_facts: False 
+
+
+ powershell scripts? https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/measure-command?view=powershell-7.4
+ -NoNewWindow Measure-Command {start-process java -argumentlist "whateverargumentisneeded" -wait}

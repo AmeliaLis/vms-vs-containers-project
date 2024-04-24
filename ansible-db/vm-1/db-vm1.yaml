@@ -46,6 +46,7 @@
         - python3-mysqldb
         - libmysqlclient-dev
       become: yes
+      ignore_errors: yes
       
     - name: Start and enable mysql service
       service:

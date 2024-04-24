@@ -190,3 +190,26 @@ ERROR 1091 (42000) at line 24: Can't DROP 'fk_staff_store'; check that column/ke
 Elapsed time is 1,149 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
 Elapsed time is 0,443 seconds.
+latest: Pulling from library/mysql
+Digest: sha256:9de9d54fecee6253130e65154b930978b1fcc336bcc86dfd06e89b72a2588ebe
+Status: Image is up to date for mysql:latest
+docker.io/library/mysql:latest
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview mysql:latest
+Elapsed time is 2.388 seconds.
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 2B 0.0s done
+#1 DONE 0.2s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B 0.0s done
+#2 DONE 0.3s
+ERROR: failed to solve: failed to read dockerfile: open /var/lib/docker/tmp/buildkit-mount4252032272/Dockerfile: no such file or directory
+Elapsed time is 2.195 seconds.
+docker: Error response from daemon: mkdir C:\Program Files\Git\home: Odmowa dostępu.
+See 'docker run --help'.
+Elapsed time is 0.439 seconds.

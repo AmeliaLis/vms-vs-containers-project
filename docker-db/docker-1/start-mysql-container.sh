@@ -11,9 +11,5 @@ exec 1>>"$tmpfile" 2>&1
 }
 
 {
-    time docker build -t mysql-container:test .
-}
-
-{
     time docker run -d --name mysql-container-test -e MYSQL_ROOT_PASSWORD=admin123 -v /home/amelia/Desktop/bachelor/docker-db/docker-1/mysql-sakila-db:/tmp/mysql-sakila-db mysql-container:test
 }

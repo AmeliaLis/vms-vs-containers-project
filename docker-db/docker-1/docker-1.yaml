@@ -1,6 +1,7 @@
 - name: Start MYSQL CONTAINER
   hosts: windows
   gather_facts: no
+  become: yes
   tasks:
 
     - name: Pull mysql image

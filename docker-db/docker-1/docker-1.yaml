@@ -31,4 +31,4 @@
 
     - name:
       win_shell: |
-        C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1.sh
+        C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\start-mysql-container.sh

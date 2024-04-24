@@ -2,7 +2,7 @@
 #Specifying the format for the output of the 'time' command
 TIMEFORMAT='Elapsed time is %R seconds.'
 
-tmpfile="/home/amelia/Desktop/bachelor/docker-db/docker-1/temp_file.txt"
+tmpfile="/c/Users/DELL/Desktop/licencjat/bachelor/docker-db/docker-1/temp_file.txt"
 
 {
     time docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 127.0.0.1 -P3306 -e 'CREATE DATABASE sakila;'"

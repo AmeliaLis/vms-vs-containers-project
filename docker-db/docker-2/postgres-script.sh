@@ -3,7 +3,7 @@
 TIMEFORMAT='Elapsed time is %R seconds.'
 
 # Redirecting the output of time commands to a temporary file
-tmpfile="/home/amelia/Desktop/bachelor/docker-db/docker-2/temp_file.txt"
+tmpfile="/c/Users/DELL/Desktop/licencjat/bachelor/docker-db/docker-2/temp_file.txt"
 
 exec 1>>"$tmpfile" 2>&1
 

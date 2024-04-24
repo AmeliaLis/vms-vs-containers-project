@@ -22,3 +22,12 @@ SCHEMA Elapsed time is 1,977 seconds.
 INSERT Elapsed time is 454,914 seconds.
 DELETE Elapsed time is 1,431 seconds.
 DROP Elapsed time is 1,149 seconds.
+
+
+
+# WINDOWS TEST
+
+Elapsed time is 2.917 seconds.
+Elapsed time is 836.905 seconds.
+Elapsed time is 4.776 seconds.
+Elapsed time is 2.530 seconds.

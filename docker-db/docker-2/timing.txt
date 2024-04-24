@@ -1,3 +1,4 @@
+# UBUNTU TEST
 TEST 1
 SCHEMA Elapsed time is 3.141 seconds.
 INSERT Elapsed time is 205.118 seconds.
@@ -27,3 +28,13 @@ SCHEMA Elapsed time is 1,436 seconds.
 INSERT Elapsed time is 120,421 seconds.
 DELETE Elapsed time is 2,598 seconds.
 DROP Elapsed time is 0,420 seconds.
+
+
+# WINDOWS TEST
+
+TEST 5
+START
+SCHEMA Elapsed time is 1.941 seconds.
+INSERT Elapsed time is 438.822 seconds.
+DELETE Elapsed time is 5.139 seconds.
+DROP Elapsed time is 1.068 seconds.

@@ -174,3 +174,8 @@ inventory = ./hosts
 callbacks_enabled = timer, profile_tasks, profile_roles
 
 add it ^
+
+
+sqllite instead of sql server?
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-sqlite-on-ubuntu-20-04
+https://thriveread.com/sqlite-docker-container-and-docker-compose/

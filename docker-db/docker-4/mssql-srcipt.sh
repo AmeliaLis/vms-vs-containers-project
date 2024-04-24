@@ -7,7 +7,7 @@ docker exec mssql-container-test sh -c "/opt/mssql-tools/bin/sqlcmd -S localhost
 TIMEFORMAT='Elapsed time is %R seconds.'
 
 # Redirecting the output of time commands to a temporary file
-tmpfile="/home/amelia/Desktop/bachelor/docker-db/docker-4/temp_file.txt"
+tmpfile="/c/Users/DELL/Desktop/licencjat/bachelor/docker-db/docker-4/temp_file.txt"
 
 {
     time docker exec mssql-container-test sh -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U amelia_user -PAdmin123! -C -i /tmp/sql-server-sakila-db/sql-server-sakila-schema.sql"

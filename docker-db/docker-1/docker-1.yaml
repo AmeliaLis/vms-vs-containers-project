@@ -25,6 +25,6 @@
     #     docker exec mysql-container-test sh -c "mysql -u root -padmin123 -P 3306 -h 127.0.0.1 --protocol=tcp -e 'create database sakila;'"
     
     - name: Create database
-      docker_container:
+      community.docker.docker_container:
         name: mysql-container-test
         command: "mysql -u root -padmin123 -e 'create database sakila;'"

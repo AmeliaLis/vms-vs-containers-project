@@ -2,7 +2,7 @@
 # Specifying the format for the output of the 'time' command
 TIMEFORMAT='Elapsed time is %R seconds.'
 
-tmpfile="/home/amelia/Desktop/bachelor/ansible-db/vm-4/temp_file.txt"
+tmpfile="/c/Users/DELL/Desktop/licencjat/bachelor/ansible-db/vm-4/temp_file.txt"
 
 exec 1>>"$tmpfile" 2>&1
 

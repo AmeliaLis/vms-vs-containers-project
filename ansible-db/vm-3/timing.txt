@@ -1,5 +1,0 @@
-TEST 1
-SCHEMA Elapsed time is 21.018 seconds.
-INSERT Elapsed time is 346.584 seconds.
-DELETE Elapsed time is 41.361 seconds.
-DROP Elapsed time is 16.629 seconds.

@@ -1,0 +1,7 @@
+TEST 1
+START Elapsed time is 28.885 seconds.
+CREATE DB Elapsed time is 1.159 seconds.
+SCHEMA Elapsed time is 5.696 seconds.
+INSERT Elapsed time is 683.237 seconds.
+DELETE Elapsed time is 12.927 seconds.
+DROP Elapsed time is 5.897 seconds.

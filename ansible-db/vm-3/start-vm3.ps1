@@ -1,1 +1,0 @@
-VBoxManage startvm db-machine-3-oracle --type headless

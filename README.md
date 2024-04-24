@@ -4,7 +4,7 @@
 ## Configuring VM's network and IP
 
 1. Set up VM with Ubuntu Server 20.04.6 iso image
-2. Set up 4 GB RAM, 1 CPU and 25 GB of memory for every VM.
+2. Set up 4 GB RAM, 2 CPU and 25 GB of memory for every VM.
 3. In settings configure network to use bridged network.
 4. Apply changes in netplan configuration
 
@@ -35,18 +35,6 @@ network:
 ```
 sudo apt update
 sudo apt install python3-psycopg2
-
-### VM3 - ORACLE DB HOST
-```
-network:
-  version: 2
-  ethernets:
-    enp0s3:
-      dhcp4: no
-      addresses:
-        - 192.168.0.117/24
-      gateway4: 192.168.0.1
-```
 
 ### VM4 - SQLLITE/MICROSOFT SQL SERVER
 ```
@@ -127,10 +115,14 @@ VBoxManage metrics query db-machine-2 /CPU/Load/User,CPU/Load/Kernel
 show processlist
 df -h
 
+# MYSQL
+
+- https://dev.mysql.com/doc/mysql-installation-excerpt/8.3/en/docker-mysql-getting-started.html
+
 
 # POSTGRESSQL 
 
-https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
+- https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
 
 amelia_user@db-machine:~$ sudo -i -u postgres
 amelia_user@db-machine:~$ sudo -u amelia_user psql
@@ -146,6 +138,7 @@ psql (12.18 (Ubuntu 12.18-0ubuntu0.20.04.1))
 - https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-deploy-ansible?view=sql-server-ver16 
 - https://www.youtube.com/watch?v=1Qlf_xwFz7Y 
 - https://galaxy.ansible.com/ui/repo/published/microsoft/sql/docs/
+- https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver16&tabs=cli&pivots=cs1-bash
 
 sql server has been installed on 192.168.0.118 connect via
 sqlcmd -S 127.0.0.1 -U sa -P Admin123! -C 
@@ -163,48 +156,21 @@ GO
 SELECT schema_name(schema_id) AS schema_name,name AS table_name,create_date,modify_date FROM sys.tables;
 
 
-
-# oracle
-
-- https://www.oracle.com/database/technologies/databaseappdev-vm.html
-
-- go to the directory where the files at
-- connect with the host sql system/oracle@localhost:1521/free
-- run sql scripts @oracle-sakila-...
-- SELECT username FROM dba_users;
-- SELECT table_name FROM user_tables;
-- SELECT COUNT(*) FROM CITY;
-- SELECT USER FROM DUAL;
-- SELECT sequence_name, sequence_owner FROM all_sequences;
-
 ## Next steps
 
-- next steps to DOCKER! - think about bash script to run sql files - just to automate the process
-- Copy SQL files to the running container
-docker cp "C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db" mysql_container:/sql_files
-
-- create ansible playbooks to run seperate bashscript with execution on docker instances - just to have timings, thanks to the ansible callbacks 
 - check if the db has to be dropped like in mysql case
+- refactor sh scripts for vms?
 
 
 1. Configure mysql on VM1 - DONE - RERUN on ansible / write script for win host (without latency)
 2. Configure postgress on VM2 - DONE - RERUN on ansible / write script for win host (without latency)
-3. Configure oracle db on VM3 - DONE - RERUN on ansible / write script for win host (without latency)
 4. Configure Microsoft SQL Server - DONE - RERUN on ansible / write script for win host (without latency)
 5. Docker mysql - DONE 
 6. Docker postgres - DONE 
-7. Docker ORACLE - DONE
 8. Docker MSSQL - DONE 
-
-
 
 [defaults]
 inventory = ./hosts
 callbacks_enabled = timer, profile_tasks, profile_roles
 
 add it ^
- gather_facts: False 
-
-
- powershell scripts? https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/measure-command?view=powershell-7.4
- -NoNewWindow Measure-Command {start-process java -argumentlist "whateverargumentisneeded" -wait}

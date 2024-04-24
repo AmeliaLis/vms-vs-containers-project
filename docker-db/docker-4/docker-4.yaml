@@ -8,4 +8,4 @@
 
     - name: Attach volume and files to mssql Container
       win_shell: |
-        sudo docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Admin123!" -p 1433:1433 --name mssql-container-test --hostname mssql-container-test -d mcr.microsoft.com/mssql/server:2022-latest
+        docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Admin123!" -p 1433:1433 --name mssql-container-test --hostname mssql-container-test -d mcr.microsoft.com/mssql/server:2022-latest

@@ -17,6 +17,6 @@
       win_shell: |
         docker run -d --name mysql-container-test -e MYSQL_ROOT_PASSWORD=admin123 -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db:/tmp/mysql-sakila-db mysql-container:test
 
-    - name: Pull mysql image
+    - name: Create database
       win_shell: |
         docker exec mysql-container-test sh -c mysql -u amelia_user -pamelia_user -h localhost -e 'create database sakila;'"

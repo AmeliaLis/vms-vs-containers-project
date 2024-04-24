@@ -17,6 +17,10 @@
       win_shell: |
         docker run -d --name mysql-container-test -e MYSQL_ROOT_PASSWORD=admin123 -v C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-sakila-db:/tmp/mysql-sakila-db mysql-container:test
 
+    - name: Introduce a delay using Start-Sleep in win_shell
+      win_shell: Start-Sleep -Seconds 10
+
+
     - name: Create database
       win_shell: |
         docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 127.0.0.1 -e 'create database sakila;'"

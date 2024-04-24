@@ -19,7 +19,7 @@
 
     - name: Create database
       win_shell: |
-        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h localhost -e 'create database sakila;'"
+        docker exec mysql-container-test sh -c "mysql -u root -padmin123 -h 172.17.0.2 -e 'create database sakila;'"
     
     - name: Drop database
       docker_container:

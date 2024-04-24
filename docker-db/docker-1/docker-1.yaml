@@ -19,4 +19,4 @@
 
     - name: Create database
       win_shell: |
-        docker exec mysql-container-test sh -c mysql -u amelia_user -pamelia_user -h localhost -e 'create database sakila;'"
+        docker exec mysql-container-test sh -c mysql -u amelia_user -pamelia_user -h localhost -e 'create database sakila;'

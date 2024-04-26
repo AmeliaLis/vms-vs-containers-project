@@ -20,3 +20,5 @@ exec 1>>"$tmpfile" 2>&1
 time docker exec mssql-container-test sh -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U amelia_user -PAdmin123! -C -d sakila -i /tmp/sql-server-sakila-db/sql-server-sakila-insert-data.sql"
 time docker exec mssql-container-test sh -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U amelia_user -PAdmin123! -C -d sakila -i /tmp/sql-server-sakila-db/sql-server-sakila-delete-data.sql"
 time docker exec mssql-container-test sh -c "/opt/mssql-tools/bin/sqlcmd -S localhost -U amelia_user -PAdmin123! -C -d sakila -i /tmp/sql-server-sakila-db/sql-server-sakila-drop-objects.sql"
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -PAdmin123! -C -i /tmp/sql-server-sakila-db/sql-server-sakila-schema.sql
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -PAdmin123! -C -i /tmp/sql-server-sakila-db/sql-server-sakila-drop-objects.sql

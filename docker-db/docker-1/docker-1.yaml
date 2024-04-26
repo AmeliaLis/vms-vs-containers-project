@@ -20,15 +20,6 @@
     - name: Introduce a delay using Start-Sleep in win_shell
       win_shell: Start-Sleep -Seconds 20
 
-    # - name: Create database
-    #   win_shell: |
-    #     docker exec mysql-container-test sh -c "mysql -u root -padmin123 -P 3306 -h 127.0.0.1 --protocol=tcp -e 'create database sakila;'"
-    
-    # - name: Create database
-    #   community.docker.docker_container:
-    #     name: mysql-container-test
-    #     command: "mysql -u root -padmin123 -e 'create database sakila;'"
-
     - name:
       win_shell: |
         C:\Users\DELL\Desktop\licencjat\bachelor\docker-db\docker-1\mysql-script.sh

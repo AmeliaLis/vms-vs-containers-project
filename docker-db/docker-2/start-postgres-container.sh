@@ -6,7 +6,7 @@ exec 1>>"$tmpfile" 2>&1
 
 TIMEFORMAT='Elapsed time for PULLING POSTGRES IMAGE is %R seconds.'
 {
-    time docker pull postgres:latest --no-cache
+    time docker pull postgres:latest
 }
 
 TIMEFORMAT='Elapsed time for STARTING CONTAINER is %R seconds.'
@@ -25,6 +25,16 @@ TIMEFORMAT='Elapsed time for INSERTING SCHEMA is %R seconds.'
 TIMEFORMAT='Elapsed time for INSERTING DATA is %R seconds.'
 {
     time docker exec postgres-container-test sh -c "PGPASSWORD=admin123 psql -U sakila -c '\i /tmp/postgres-sakila-db/postgres-sakila-insert-data.sql'"
+}
+
+TIMEFORMAT='Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is %R seconds.'
+{
+    time docker exec postgres-container-test sh -c 'PGPASSWORD=admin123 psql -U sakila -d sakila -c "SELECT * FROM CUSTOMER ORDER BY first_name, last_name;"'
+}
+
+TIMEFORMAT='Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is %R seconds.'
+{
+    time docker exec postgres-container-test sh -c "PGPASSWORD=admin123 psql -U sakila -d sakila -c \"SELECT f.title AS 'Movie', COUNT(r.rental_date) AS 'Times Rented' FROM film AS f JOIN inventory AS i ON i.film_id = f.film_id JOIN rental AS r ON r.inventory_id = i.inventory_id GROUP BY f.title ORDER BY COUNT(r.rental_date) DESC;\""
 }
 
 TIMEFORMAT='Elapsed time for DELETING DATA is %R seconds.'

@@ -26,3 +26,28 @@ Elapsed time for INSERTING SCHEMA is 1.571 seconds.
 Elapsed time for INSERTING DATA is 174.435 seconds.
 Elapsed time for DELETING DATA is 5.395 seconds.
 Elapsed time for DROPING OBJECTS IN SCHEMA is 1.028 seconds.
+
+
+TEST 5
+Elapsed time for PULLING POSTGRES IMAGE is 58.809 seconds.
+Elapsed time for STARTING CONTAINER is 3.373 seconds.
+Elapsed time for INSERTING SCHEMA is 3.182 seconds.
+Elapsed time for INSERTING DATA is 248.515 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.827 seconds.
+Elapsed time for DELETING DATA is 4.113 seconds.
+Elapsed time for DROPING OBJECTS IN SCHEMA is 0.878 seconds.
+
+TEST 6
+Elapsed time for PULLING POSTGRES IMAGE is 27.054 seconds.
+Elapsed time for STARTING CONTAINER is 1.830 seconds.
+Elapsed time for INSERTING SCHEMA is 2.784 seconds.
+Elapsed time for INSERTING DATA is 194.581 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.905 seconds.
+Elapsed time for DELETING DATA is 4.374 seconds.
+
+TEST 7
+Elapsed time for PULLING POSTGRES IMAGE is 24.404 seconds.
+Elapsed time for STARTING CONTAINER is 2.200 seconds.
+Elapsed time for INSERTING SCHEMA is 2.125 seconds.
+Elapsed time for INSERTING DATA is 168.748 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.723 seconds.

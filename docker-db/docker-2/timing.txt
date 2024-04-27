@@ -1,40 +1,28 @@
-# UBUNTU TEST
 TEST 1
-SCHEMA Elapsed time is 3.141 seconds.
-INSERT Elapsed time is 205.118 seconds.
-DELETE Elapsed time is 3.736 seconds.
-DROP Elapsed time is 0.785 seconds.
-
-TEST 2
-PULL Elapsed time is 21,538 seconds.
-START Elapsed time is 1,181 seconds.
-SCHEMA Elapsed time is 0,879 seconds.
-INSERT Elapsed time is 117,502 seconds.
-INSERT Elapsed time is 205.118 seconds.
-DELETE Elapsed time is 2,286 seconds.
-DROP Elapsed time is 0,318 seconds.
-
-TEST 3
-
-START Elapsed time is 0,667 seconds.
-SCHEMA Elapsed time is 0,978 seconds.
-INSERT Elapsed time is 116,107 seconds.
-DELETE Elapsed time is 2,432 seconds.
-DROP Elapsed time is 0,318 seconds.
-
-TEST 4
-START Elapsed time is 0,997 seconds.
-SCHEMA Elapsed time is 1,436 seconds.
-INSERT Elapsed time is 120,421 seconds.
-DELETE Elapsed time is 2,598 seconds.
-DROP Elapsed time is 0,420 seconds.
-
-
-# WINDOWS TEST
-
-TEST 5
-START
 SCHEMA Elapsed time is 1.941 seconds.
 INSERT Elapsed time is 438.822 seconds.
 DELETE Elapsed time is 5.139 seconds.
 DROP Elapsed time is 1.068 seconds.
+
+TEST 2
+Elapsed time for PULLING POSTGRES IMAGE is 2.609 seconds.
+Elapsed time for STARTING CONTAINER is 1.725 seconds.
+Elapsed time for INSERTING SCHEMA is 1.868 seconds.
+Elapsed time for INSERTING DATA is 219.065 seconds.
+Elapsed time for DELETING DATA is 4.107 seconds.
+Elapsed time for DROPING OBJECTS IN SCHEMA is 0.926 seconds.
+
+
+TEST 3
+Elapsed time for STARTING CONTAINER is 29.019 seconds.
+Elapsed time for INSERTING SCHEMA is 2.511 seconds.
+Elapsed time for INSERTING DATA is 212.054 seconds.
+Elapsed time for DELETING DATA is 3.653 seconds.
+Elapsed time for DROPING OBJECTS IN SCHEMA is 0.756 seconds.
+
+TEST 4
+Elapsed time for STARTING CONTAINER is 25.815 seconds.
+Elapsed time for INSERTING SCHEMA is 1.571 seconds.
+Elapsed time for INSERTING DATA is 174.435 seconds.
+Elapsed time for DELETING DATA is 5.395 seconds.
+Elapsed time for DROPING OBJECTS IN SCHEMA is 1.028 seconds.

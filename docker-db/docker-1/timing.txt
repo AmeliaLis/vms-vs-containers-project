@@ -1,33 +1,45 @@
 TEST 1
-SCHEMA Elapsed time is 1,749 seconds.
-INSERT Elapsed time is 461,794 seconds.
-DELETE Elapsed time is 1,454 seconds.
-DROP Elapsed time is 1,469 seconds.
+Elapsed time for STARTING CONTAINER is 2.221 seconds.
+Elapsed time for INSERTING SCHEMA is 2.917 seconds.
+Elapsed time for INSERTING DATA is 836.905 seconds.
+Elapsed time for DELETING DATA is 4.776 seconds.
+Elapsed time for DROPING OBJECTS IN SCHEMA is 2.530 seconds.
 
 TEST 2
-SCHEMA Elapsed time is 2,054 seconds.
-INSERT Elapsed time is 464,441 seconds.
-DELETE Elapsed time is 1,493 seconds.
-DROP Elapsed time is 1,137 seconds.
+
+Elapsed time for STARTING CONTAINER is 1.769 seconds.
+Elapsed time for INSERTING SCHEMA is 3.365 seconds.
+Elapsed time for INSERTING DATA is 1084.318 seconds.
+Elapsed time for DELETING DATA is 5.225 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 6.781 seconds.
+Elapsed time for DROPING DATABASE is 1.641 seconds.
 
 TEST 3
-SCHEMA Elapsed time is 1,764 seconds.
-INSERT Elapsed time is 461,435 seconds.
-DELETE Elapsed time is 1,409 seconds.
-DROP Elapsed time is 1,059 seconds.
+
+Elapsed time for BUILDING MYSQL IMAGE is 3.532 seconds.
+Elapsed time for STARTING CONTAINER is 1.813 seconds.
+Elapsed time for INSERTING SCHEMA is 3.677 seconds.
+Elapsed time for INSERTING DATA is 686.733 seconds.
+Elapsed time for DELETING DATA is 2.849 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 1.607 seconds.
+Elapsed time for DROPING DATABASE is 0.717 seconds.
 
 TEST 4
-START lapsed time is 0,568 seconds.
-SCHEMA Elapsed time is 1,977 seconds.
-INSERT Elapsed time is 454,914 seconds.
-DELETE Elapsed time is 1,431 seconds.
-DROP Elapsed time is 1,149 seconds.
 
+Elapsed time for BUILDING MYSQL IMAGE is 6.921 seconds.
+Elapsed time for STARTING CONTAINER is 2.073 seconds.
+Elapsed time for INSERTING SCHEMA is 4.310 seconds.
+Elapsed time for INSERTING DATA is 726.019 seconds.
+Elapsed time for DELETING DATA is 3.097 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 1.671 seconds.
+Elapsed time for DROPING DATABASE is 1.220 seconds.
 
+TEST 5
 
-# WINDOWS TEST
-
-Elapsed time is 2.917 seconds.
-Elapsed time is 836.905 seconds.
-Elapsed time is 4.776 seconds.
-Elapsed time is 2.530 seconds.
+Elapsed time for BUILDING MYSQL IMAGE is 6.532 seconds.
+Elapsed time for STARTING CONTAINER is 1.449 seconds.
+Elapsed time for INSERTING SCHEMA is 3.204 seconds.
+Elapsed time for INSERTING DATA is 652.277 seconds.
+Elapsed time for DELETING DATA is 3.049 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 1.792 seconds.
+Elapsed time for DROPING DATABASE is 1.092 seconds.

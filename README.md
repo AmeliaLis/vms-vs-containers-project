@@ -164,7 +164,7 @@ SELECT schema_name(schema_id) AS schema_name,name AS table_name,create_date,modi
 
 1. Configure mysql on VM1 - DONE - RERUN on ansible / write script for win host (without latency)
 2. Configure postgress on VM2 - DONE - RERUN on ansible / write script for win host (without latency)
-4. Configure Microsoft SQL Server - DONE - RERUN on ansible / write script for win host (without latency)
+4. Configure Microsoft SQL Server - DONE - RERUN on ansible / write script for win host (without latency) - REVIEW
 5. Docker mysql - DONE 
 6. Docker postgres - DONE 
 8. Docker MSSQL - DONE 
@@ -174,8 +174,3 @@ inventory = ./hosts
 callbacks_enabled = timer, profile_tasks, profile_roles
 
 add it ^
-
-
-sqllite instead of sql server?
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-sqlite-on-ubuntu-20-04
-https://thriveread.com/sqlite-docker-container-and-docker-compose/

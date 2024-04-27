@@ -1,30 +1,41 @@
 TEST 1
-START Elapsed time is 0,853 seconds.
-SCHEMA Elapsed time is 1,202 seconds.
-INSERT Elapsed time is 250,947 seconds.
-DELETE Elapsed time is 2,263 seconds.
-DROP Elapsed time is 0,333 seconds.
-
+Elapsed time for STARTING CONTAINER is 0.927 seconds.
+Elapsed time for INSERTING SCHEMA is 2.177 seconds.
+Elapsed time for INSERTING DATA is 352.777 seconds.
+Elapsed time for DELETING DATA is 7.222 seconds.
+Elapsed time for DROPING OBJECTS IN SCHEMA is 0.843 seconds.
 
 TEST 2
-START Elapsed time is 0,801 seconds.
-SCHEMA Elapsed time is 1,109 seconds.
-INSERT Elapsed time is 250,936 seconds.
-DELETE Elapsed time is 2,465 seconds.
-DROP Elapsed time is 0,338 seconds.
+Elapsed time for STARTING CONTAINER is 3.551 seconds.
+Elapsed time for INSERTING SCHEMA is 2.886 seconds.
+Elapsed time for INSERTING DATA is 391.279 seconds.
+Elapsed time for DELETING DATA is 5.505 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 1.279 seconds.
 
 TEST 3
-START Elapsed time is 0,934 seconds.
-SCHEMA Elapsed time is 1,012 seconds.
-INSERT Elapsed time is 256,971 seconds.
-DELETE Elapsed time is 2,274 seconds.
-DROP Elapsed time is 0,321 seconds.
+Elapsed time for STARTING CONTAINER is 1.453 seconds.
+Elapsed time for INSERTING SCHEMA is 2.144 seconds.
+Elapsed time for INSERTING DATA is 399.029 seconds.
+Elapsed time for DELETING DATA is 3.799 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 1.088 seconds.
 
 TEST 4
-PULL Elapsed time is 158,154 seconds.
-START Elapsed time is 1,831 seconds.
-SCHEMA Elapsed time is 1,019 seconds.
-INSERT Elapsed time is 253,502 seconds.
-DELETE Elapsed time is 2,856 seconds.
-DROP Elapsed time is 0,389 seconds.
+Elapsed time for STARTING CONTAINER is 2.470 seconds.
+Elapsed time for INSERTING SCHEMA is 3.166 seconds.
+Elapsed time for INSERTING DATA is 565.243 seconds.
+Elapsed time for DELETING DATA is 6.243 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 2.101 seconds.
 
+TEST 5
+Elapsed time for STARTING CONTAINER is 1.723 seconds.
+Elapsed time for INSERTING SCHEMA is 4.227 seconds.
+Elapsed time for INSERTING DATA is 716.095 seconds.
+Elapsed time for DELETING DATA is 9.609 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 2.233 seconds.
+
+TEST 6
+Elapsed time for STARTING CONTAINER is 2.741 seconds.
+Elapsed time for INSERTING SCHEMA is 3.569 seconds.
+Elapsed time for INSERTING DATA is 592.770 seconds.
+Elapsed time for DELETING DATA is 3.975 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 0.838 seconds.

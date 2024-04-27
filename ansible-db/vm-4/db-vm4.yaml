@@ -13,25 +13,44 @@
         powershell.exe -ExecutionPolicy Bypass -File "C:\Users\DELL\workspace\vm4\start-vm4.ps1"
 
 - name: Start mssql service and run sql files
-  hosts: windows
+  hosts: vm-4
   gather_facts: no
   tasks:
     - name: Run Insert schema script
-      win_shell: |
-        sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-schema.sql
+      command: sqlcmd -S localhost -U amelia_user -P Admin123! -C -d sakila -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-delete-data.sql'
     
     - name: Run Insert data script
-      win_shell: |
-        sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-insert-data.sql
+      command: sqlcmd -S localhost -U amelia_user -P Admin123! -C -d sakila -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-insert-data.sql'
 
     - name: Run Delete data script
-      win_shell: |
-        sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-delete-data.sql
+      command: sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-delete-data.sql'
 
     - name: Run Drop schema script
-      win_shell: |
-        sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-drop-objects.sql
+      command: sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-drop-objects.sql'
 
     - name: Run Drop database
-      win_shell: |
-        sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -Q "DROP DATABASE sakila;"
+      command: sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -Q "DROP DATABASE sakila;"
+
+# - name: Start mssql service and run sql files
+#   hosts: windows
+#   gather_facts: no
+#   tasks:
+#     - name: Run Insert schema script
+#       win_shell: |
+#         sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-schema.sql
+    
+#     - name: Run Insert data script
+#       win_shell: |
+#         sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-insert-data.sql
+
+#     - name: Run Delete data script
+#       win_shell: |
+#         sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-delete-data.sql
+
+#     - name: Run Drop schema script
+#       win_shell: |
+#         sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -i C:\Users\DELL\Desktop\licencjat\bachelor\ansible-db\vm-4\sql-server-sakila-db\sql-server-sakila-drop-objects.sql
+
+#     - name: Run Drop database
+#       win_shell: |
+#         sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -Q "DROP DATABASE sakila;"

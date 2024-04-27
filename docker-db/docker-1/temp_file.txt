@@ -1,208 +1,167 @@
-latest: Pulling from library/mysql
-Digest: sha256:9de9d54fecee6253130e65154b930978b1fcc336bcc86dfd06e89b72a2588ebe
-Status: Image is up to date for mysql:latest
-docker.io/library/mysql:latest
+#0 building with "default" instance using docker driver
 
-What's Next?
-  1. Sign in to your Docker account → docker login
-  2. View a summary of image vulnerabilities and recommendations → docker scout quickview mysql:latest
-Elapsed time is 1,748 seconds.
-#0 building with "desktop-linux" instance using docker driver
-
-#1 [internal] load build definition from Dockerfile
-#1 transferring dockerfile: 244B done
+#1 [internal] load .dockerignore
+#1 transferring context: 2B 0.0s done
 #1 DONE 0.0s
 
-#2 [internal] load metadata for docker.io/library/mysql:latest
-#2 DONE 0.0s
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 250B 0.0s done
+#2 DONE 0.1s
 
-#3 [internal] load .dockerignore
-#3 transferring context: 2B done
+#3 [internal] load metadata for docker.io/library/mysql:latest
 #3 DONE 0.0s
 
 #4 [1/4] FROM docker.io/library/mysql:latest
-#4 DONE 0.0s
+#4 CACHED
 
 #5 [internal] load build context
 #5 transferring context: 42B done
 #5 DONE 0.0s
 
 #6 [2/4] COPY custom_entrypoint.sh /usr/local/bin/
-#6 CACHED
+#6 DONE 0.1s
 
 #7 [3/4] RUN chmod +x /usr/local/bin/custom_entrypoint.sh
-#7 CACHED
+#7 DONE 0.8s
 
 #8 [4/4] RUN /usr/local/bin/custom_entrypoint.sh
-#8 CACHED
+#8 DONE 0.5s
 
 #9 exporting to image
-#9 exporting layers done
-#9 writing image sha256:4fd71f9f5598773876165909b56c1dd3b96648b7a1ffdff546fb5bd27aec11f0 done
-#9 naming to docker.io/library/mysql-container:test
-#9 naming to docker.io/library/mysql-container:test done
-#9 DONE 0.0s
+#9 exporting layers
+#9 exporting layers 0.2s done
+#9 writing image sha256:1e3fe5bc47f92737029c7d95758c7ddb821fe45ce6b3d1955e5eadd9ddb864e6 done
+#9 naming to docker.io/library/mysql-container:test 0.0s done
+#9 DONE 0.2s
 
 What's Next?
-  1. Sign in to your Docker account → docker login
-  2. View a summary of image vulnerabilities and recommendations → docker scout quickview
-Elapsed time is 0,725 seconds.
-9deddb93391faba8c7c69ac2e68ecf2602850fe8486b45182f84ad4cbf912ec0
-Elapsed time is 0,655 seconds.
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+Elapsed time for BUILDING MYSQL IMAGE is 3.532 seconds.
+ba0846a788d20e9d60355c047284fd000e8ae4c722c3388877c03f832a898f84
+Elapsed time for STARTING CONTAINER is 1.813 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 0,191 seconds.
+Elapsed time for INSERTING SCHEMA is 3.677 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 2,054 seconds.
+Elapsed time for INSERTING DATA is 686.733 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 464,441 seconds.
-mysql: [Warning] Using a password on the command line interface can be insecure.
-ERROR 3780 (HY000) at line 16: Referencing column 'manager_staff_id' and referenced column 'staff_id' in foreign key constraint 'fk_store_staff' are incompatible.
-Elapsed time is 1,493 seconds.
+Elapsed time for DELETING DATA is 2.849 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
 ERROR 1091 (42000) at line 24: Can't DROP 'fk_staff_store'; check that column/key exists
-Elapsed time is 1,137 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 1.607 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 0,435 seconds.
-latest: Pulling from library/mysql
-Digest: sha256:9de9d54fecee6253130e65154b930978b1fcc336bcc86dfd06e89b72a2588ebe
-Status: Image is up to date for mysql:latest
-docker.io/library/mysql:latest
-
-What's Next?
-  1. Sign in to your Docker account → docker login
-  2. View a summary of image vulnerabilities and recommendations → docker scout quickview mysql:latest
-Elapsed time is 1,929 seconds.
-#0 building with "desktop-linux" instance using docker driver
+Elapsed time for DROPING DATABASE is 0.717 seconds.
+#0 building with "default" instance using docker driver
 
 #1 [internal] load build definition from Dockerfile
-#1 transferring dockerfile: 244B done
 #1 DONE 0.0s
 
-#2 [internal] load metadata for docker.io/library/mysql:latest
-#2 DONE 0.0s
-
-#3 [internal] load .dockerignore
-#3 transferring context: 2B done
-#3 DONE 0.0s
-
-#4 [1/4] FROM docker.io/library/mysql:latest
-#4 DONE 0.0s
-
-#5 [internal] load build context
-#5 transferring context: 42B done
-#5 DONE 0.0s
-
-#6 [2/4] COPY custom_entrypoint.sh /usr/local/bin/
-#6 CACHED
-
-#7 [3/4] RUN chmod +x /usr/local/bin/custom_entrypoint.sh
-#7 CACHED
-
-#8 [4/4] RUN /usr/local/bin/custom_entrypoint.sh
-#8 CACHED
-
-#9 exporting to image
-#9 exporting layers done
-#9 writing image sha256:4fd71f9f5598773876165909b56c1dd3b96648b7a1ffdff546fb5bd27aec11f0 done
-#9 naming to docker.io/library/mysql-container:test done
-#9 DONE 0.0s
-
-What's Next?
-  1. Sign in to your Docker account → docker login
-  2. View a summary of image vulnerabilities and recommendations → docker scout quickview
-Elapsed time is 0,659 seconds.
-34cbee064a0ae914dd8cf880de5b27947211f401d15b4be750c0eb1f524bc61d
-Elapsed time is 0,754 seconds.
-mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 0,335 seconds.
-mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 1,764 seconds.
-mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 461,435 seconds.
-mysql: [Warning] Using a password on the command line interface can be insecure.
-ERROR 3780 (HY000) at line 16: Referencing column 'manager_staff_id' and referenced column 'staff_id' in foreign key constraint 'fk_store_staff' are incompatible.
-Elapsed time is 1,409 seconds.
-mysql: [Warning] Using a password on the command line interface can be insecure.
-ERROR 1091 (42000) at line 24: Can't DROP 'fk_staff_store'; check that column/key exists
-Elapsed time is 1,059 seconds.
-mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 0,351 seconds.
-latest: Pulling from library/mysql
-Digest: sha256:9de9d54fecee6253130e65154b930978b1fcc336bcc86dfd06e89b72a2588ebe
-Status: Image is up to date for mysql:latest
-docker.io/library/mysql:latest
-
-What's Next?
-  1. Sign in to your Docker account → docker login
-  2. View a summary of image vulnerabilities and recommendations → docker scout quickview mysql:latest
-Elapsed time is 2,278 seconds.
-#0 building with "desktop-linux" instance using docker driver
+#2 [internal] load .dockerignore
+#2 transferring context: 2B 0.0s done
+#2 DONE 0.1s
 
 #1 [internal] load build definition from Dockerfile
-#1 transferring dockerfile: 244B done
-#1 DONE 0.0s
+#1 transferring dockerfile: 250B 0.0s done
+#1 DONE 0.1s
 
-#2 [internal] load metadata for docker.io/library/mysql:latest
-#2 DONE 0.0s
+#3 [internal] load metadata for docker.io/library/mysql:latest
+#3 DONE 2.9s
 
-#3 [internal] load .dockerignore
-#3 transferring context: 2B done
-#3 DONE 0.0s
-
-#4 [1/4] FROM docker.io/library/mysql:latest
+#4 [internal] load build context
 #4 DONE 0.0s
 
-#5 [internal] load build context
-#5 transferring context: 42B done
-#5 DONE 0.0s
+#5 [1/4] FROM docker.io/library/mysql:latest@sha256:9de9d54fecee6253130e65154b930978b1fcc336bcc86dfd06e89b72a2588ebe
+#5 resolve docker.io/library/mysql:latest@sha256:9de9d54fecee6253130e65154b930978b1fcc336bcc86dfd06e89b72a2588ebe 0.0s done
+#5 CACHED
+
+#4 [internal] load build context
+#4 transferring context: 42B done
+#4 DONE 0.0s
 
 #6 [2/4] COPY custom_entrypoint.sh /usr/local/bin/
-#6 CACHED
+#6 DONE 0.1s
 
 #7 [3/4] RUN chmod +x /usr/local/bin/custom_entrypoint.sh
-#7 CACHED
+#7 DONE 0.8s
 
 #8 [4/4] RUN /usr/local/bin/custom_entrypoint.sh
-#8 CACHED
+#8 DONE 0.6s
 
 #9 exporting to image
-#9 exporting layers done
-#9 writing image sha256:4fd71f9f5598773876165909b56c1dd3b96648b7a1ffdff546fb5bd27aec11f0 done
-#9 naming to docker.io/library/mysql-container:test done
-#9 DONE 0.0s
+#9 exporting layers
+#9 exporting layers 0.1s done
+#9 writing image sha256:4b3f35821988a2f4f7201f6385abb39eff54d6cfc71ea9c2a435e097ffcc0664 done
+#9 naming to docker.io/library/mysql-container:test 0.0s done
+#9 DONE 0.2s
 
 What's Next?
-  1. Sign in to your Docker account → docker login
-  2. View a summary of image vulnerabilities and recommendations → docker scout quickview
-Elapsed time is 0,653 seconds.
-65f9e5f9b2f6907740816172438879184542c1ec89740968ea3bcc7488f38180
-Elapsed time is 0,568 seconds.
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+Elapsed time for BUILDING MYSQL IMAGE is 6.921 seconds.
+2e243d6b5f16f308aeb341b34842f4e8358764919496b656e23a53418c50387d
+Elapsed time for STARTING CONTAINER is 2.073 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 0,208 seconds.
+Elapsed time for INSERTING SCHEMA is 4.310 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 1,977 seconds.
+Elapsed time for INSERTING DATA is 726.019 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 454,914 seconds.
-mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 1,431 seconds.
+Elapsed time for DELETING DATA is 3.097 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
 ERROR 1091 (42000) at line 24: Can't DROP 'fk_staff_store'; check that column/key exists
-Elapsed time is 1,149 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 1.671 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 0,443 seconds.
+Elapsed time for DROPING DATABASE is 1.220 seconds.
+#0 building with "default" instance using docker driver
 
+#1 [internal] load .dockerignore
+#1 transferring context: 2B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 250B 0.0s done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/mysql:latest
+#3 DONE 2.5s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/4] FROM docker.io/library/mysql:latest@sha256:9de9d54fecee6253130e65154b930978b1fcc336bcc86dfd06e89b72a2588ebe
+#5 resolve docker.io/library/mysql:latest@sha256:9de9d54fecee6253130e65154b930978b1fcc336bcc86dfd06e89b72a2588ebe 0.0s done
+#5 CACHED
+
+#4 [internal] load build context
+#4 transferring context: 42B done
+#4 DONE 0.0s
+
+#6 [2/4] COPY custom_entrypoint.sh /usr/local/bin/
+#6 DONE 0.1s
+
+#7 [3/4] RUN chmod +x /usr/local/bin/custom_entrypoint.sh
+#7 DONE 1.1s
+
+#8 [4/4] RUN /usr/local/bin/custom_entrypoint.sh
+#8 DONE 0.6s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 0.2s done
+#9 writing image sha256:5a22f2f7d29242ef9907f46e55e96dd37914d28bb362caf842f1e48a7e6ebb88 done
+#9 naming to docker.io/library/mysql-container:test 0.0s done
+#9 DONE 0.2s
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+Elapsed time for BUILDING MYSQL IMAGE is 6.532 seconds.
+6f92f30d45ad75c2b7ab5cf3c1ccec1884157abafab32accaa3be1f1de74c294
+Elapsed time for STARTING CONTAINER is 1.449 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 0.591 seconds.
+Elapsed time for INSERTING SCHEMA is 3.204 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 2.917 seconds.
+Elapsed time for INSERTING DATA is 652.277 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 836.905 seconds.
-mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 4.776 seconds.
+Elapsed time for DELETING DATA is 3.049 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
 ERROR 1091 (42000) at line 24: Can't DROP 'fk_staff_store'; check that column/key exists
-Elapsed time is 2.530 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 1.792 seconds.
 mysql: [Warning] Using a password on the command line interface can be insecure.
-Elapsed time is 0.942 seconds.
-
-
+Elapsed time for DROPING DATABASE is 1.092 seconds.

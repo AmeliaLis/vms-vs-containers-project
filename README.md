@@ -182,7 +182,7 @@ add select
 
        |
 fix it v
-select f.title as 'Movie', count(r.rental_date) as 'Times Rented'
+select f.title, count(r.rental_date)
 	from film as f
 	join inventory as i on i.film_id = f.film_id
 	join rental as r on r.inventory_id = i.inventory_id

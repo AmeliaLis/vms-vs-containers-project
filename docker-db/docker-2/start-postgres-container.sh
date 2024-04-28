@@ -34,7 +34,7 @@ TIMEFORMAT='Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME A
 
 TIMEFORMAT='Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is %R seconds.'
 {
-    time docker exec postgres-container-test sh -c "PGPASSWORD=admin123 psql -U sakila -d sakila -c \"SELECT f.title AS 'Movie', COUNT(r.rental_date) AS 'Times Rented' FROM film AS f JOIN inventory AS i ON i.film_id = f.film_id JOIN rental AS r ON r.inventory_id = i.inventory_id GROUP BY f.title ORDER BY COUNT(r.rental_date) DESC;\""
+    time docker exec postgres-container-test sh -c 'PGPASSWORD=admin123 psql -U sakila -d sakila -c "select f.title, count(r.rental_date) from film as f join inventory as i on i.film_id = f.film_id join rental as r on r.inventory_id = i.inventory_id group by f.title order by count(r.rental_date) desc;"'
 }
 
 TIMEFORMAT='Elapsed time for DELETING DATA is %R seconds.'

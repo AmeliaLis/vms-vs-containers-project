@@ -158,7 +158,6 @@ SELECT schema_name(schema_id) AS schema_name,name AS table_name,create_date,modi
 
 ## Next steps
 
-- check if the db has to be dropped like in mysql case
 - refactor sh scripts for vms?
 
 

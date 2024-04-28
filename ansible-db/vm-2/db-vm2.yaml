@@ -47,11 +47,11 @@
 
     - name: Run Select from customer table script
       become_user: amelia_user
-      command: psql -U amelia_user -d sakila -c "SELECT * FROM customer ORDER BY first_name, last_name;"
+      command: psql -U amelia_user -c "SELECT * FROM customer ORDER BY first_name, last_name;"
     
     - name: Run  Select most rented films query
       become_user: amelia_user
-      command: psql -U amelia_user -d sakila -c "select f.title, count(r.rental_date) from film as f join inventory as i on i.film_id = f.film_id join rental as r on r.inventory_id = i.inventory_id group by f.title order by count(r.rental_date) desc;"
+      command: psql -U amelia_user -c "select f.title, count(r.rental_date) from film as f join inventory as i on i.film_id = f.film_id join rental as r on r.inventory_id = i.inventory_id group by f.title order by count(r.rental_date) desc;"
 
     - name: Run Delete data script
       become_user: amelia_user

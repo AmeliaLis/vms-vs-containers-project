@@ -21,12 +21,13 @@ DROP TABLE language;
 DROP TABLE customer;
 DROP TABLE actor;
 DROP TABLE category;
-ALTER TABLE staff DROP FOREIGN KEY fk_staff_store , DROP FOREIGN KEY fk_staff_address;
 DROP TABLE store;
 DROP TABLE address;
 DROP TABLE staff;
 DROP TABLE city;
 DROP TABLE country;
+ALTER TABLE staff DROP FOREIGN KEY fk_staff_store , DROP FOREIGN KEY fk_staff_address;
+
 
 -- Procedures and views
 drop procedure film_in_stock;

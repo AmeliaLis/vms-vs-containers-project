@@ -39,3 +39,22 @@ Elapsed time for INSERTING SCHEMA is 3.569 seconds.
 Elapsed time for INSERTING DATA is 592.770 seconds.
 Elapsed time for DELETING DATA is 3.975 seconds.
 Elapsed time for DELETING OBJECTS IN SCHEMA is 0.838 seconds.
+
+TEST 7
+BUILD DONE 451.8s
+Elapsed time for STARTING CONTAINER is 2.605 seconds.
+Elapsed time for INSERTING SCHEMA is 7.550 seconds.
+Elapsed time for INSERTING DATA is 585.169 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 1.647 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 2.038 seconds.
+Elapsed time for DELETING DATA is 5.820 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 2.493 seconds.
+
+TEST 8
+Elapsed time for STARTING CONTAINER is 2.181 seconds.
+Elapsed time for INSERTING SCHEMA is 1.957 seconds.
+Elapsed time for INSERTING DATA is 278.725 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 1.190 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.866 seconds.
+Elapsed time for DELETING DATA is 3.596 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 1.068 seconds.

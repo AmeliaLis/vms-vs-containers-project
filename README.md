@@ -187,4 +187,8 @@ select f.title, count(r.rental_date)
 	join inventory as i on i.film_id = f.film_id
 	join rental as r on r.inventory_id = i.inventory_id
 	group by f.title
-	order by count(r.rental_date) desc;
+	order by count(r.rental_date) desc;\\
+
+
+  "Memory": 4294967296,
+		"NanoCpus": 2000000000,

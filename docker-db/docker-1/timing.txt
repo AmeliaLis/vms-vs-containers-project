@@ -43,3 +43,27 @@ Elapsed time for INSERTING DATA is 652.277 seconds.
 Elapsed time for DELETING DATA is 3.049 seconds.
 Elapsed time for DELETING OBJECTS IN SCHEMA is 1.792 seconds.
 Elapsed time for DROPING DATABASE is 1.092 seconds.
+
+TEST 6
+
+Elapsed time for BUILDING MYSQL IMAGE is 79.583 seconds.
+Elapsed time for STARTING CONTAINER is 3.262 seconds.
+Elapsed time for INSERTING SCHEMA is 19.823 seconds.
+Elapsed time for INSERTING DATA is 785.715 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.896 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.614 seconds.
+Elapsed time for DELETING DATA is 3.135 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 1.859 seconds.
+Elapsed time for DROPING DATABASE is 0.803 seconds.
+
+TEST 7
+
+Elapsed time for BUILDING MYSQL IMAGE is 15.266 seconds.
+Elapsed time for STARTING CONTAINER is 3.749 seconds.
+Elapsed time for INSERTING SCHEMA is 17.665 seconds.
+Elapsed time for INSERTING DATA is 764.100 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.593 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.614 seconds.
+Elapsed time for DELETING DATA is 2.778 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 1.782 seconds.
+Elapsed time for DROPING DATABASE is 0.776 seconds.

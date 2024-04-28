@@ -51,3 +51,25 @@ Elapsed time for STARTING CONTAINER is 2.200 seconds.
 Elapsed time for INSERTING SCHEMA is 2.125 seconds.
 Elapsed time for INSERTING DATA is 168.748 seconds.
 Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.723 seconds.
+
+TEST 8
+Elapsed time for PULLING POSTGRES IMAGE is 24.140 seconds.
+Elapsed time for STARTING CONTAINER is 3.111 seconds.
+Elapsed time for INSERTING SCHEMA is 6.831 seconds.
+Elapsed time for INSERTING DATA is 226.061 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.561 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.578 seconds.
+Elapsed time for DELETING DATA is 3.563 seconds.
+Elapsed time for DROPING OBJECTS IN SCHEMA is 0.732 seconds.
+
+TEST 9
+
+Elapsed time for PULLING POSTGRES IMAGE is 2.111 seconds.
+Elapsed time for STARTING CONTAINER is 2.221 seconds.
+Elapsed time for INSERTING SCHEMA is 4.508 seconds.
+Elapsed time for INSERTING DATA is 406.511 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.844 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.657 seconds.
+Elapsed time for DELETING DATA is 5.051 seconds.
+Elapsed time for DROPING OBJECTS IN SCHEMA is 0.884 seconds.
+

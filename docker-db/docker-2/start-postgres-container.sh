@@ -29,7 +29,7 @@ TIMEFORMAT='Elapsed time for INSERTING DATA is %R seconds.'
 
 TIMEFORMAT='Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is %R seconds.'
 {
-    time docker exec postgres-container-test sh -c 'PGPASSWORD=admin123 psql -U sakila -d sakila -c "SELECT * FROM CUSTOMER ORDER BY first_name, last_name;"'
+    time docker exec postgres-container-test sh -c 'PGPASSWORD=admin123 psql -U sakila -d sakila -c "SELECT * FROM customer ORDER BY first_name, last_name;"'
 }
 
 TIMEFORMAT='Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is %R seconds.'

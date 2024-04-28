@@ -17,7 +17,7 @@
   gather_facts: no
   tasks:
     - name: Run Insert schema script
-      command: sqlcmd -S localhost -U amelia_user -P Admin123! -C -d sakila -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-delete-data.sql'
+      command: "/opt/mssql-tools18/bin/sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-delete-data.sql'"
     
     - name: Run Insert data script
       command: sqlcmd -S localhost -U amelia_user -P Admin123! -C -d sakila -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-insert-data.sql'

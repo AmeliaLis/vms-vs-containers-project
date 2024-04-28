@@ -17,13 +17,13 @@
   gather_facts: no
   tasks:
     - name: Run Insert schema script
-      command: "/opt/mssql-tools18/bin/sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-delete-data.sql'"
+      command: "/opt/mssql-tools18/bin/sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-schema.sql'"
     
     - name: Run Insert data script
-      command: "/opt/mssql-tools18/bin/sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -i '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-insert-data.sql'"
+      command: "/opt/mssql-tools18/bin/sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -i -d sakila '/home/amelia_user/sql-server-sakila-db/sql-server-sakila-insert-data.sql'"
 
     - name: SELECTING DATA FROM CUSTOMER TABLE query
-      command: "/opt/mssql-tools18/bin/sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -Q 'SELECT * FROM CUSTOMER ORDER BY first_name, last_name;'"
+      command: "/opt/mssql-tools18/bin/sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -Q 'SELECT * FROM customer ORDER BY first_name, last_name;'"
 
     - name: SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER query
       command: "/opt/mssql-tools18/bin/sqlcmd -S 192.168.0.118 -U amelia_user -P Admin123! -C -d sakila -Q 'select f.title, count(r.rental_date) from film as f join inventory as i on i.film_id = f.film_id join rental as r on r.inventory_id = i.inventory_id group by f.title order by count(r.rental_date) desc;'"

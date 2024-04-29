@@ -156,38 +156,13 @@ GO
 SELECT schema_name(schema_id) AS schema_name,name AS table_name,create_date,modify_date FROM sys.tables;
 
 
-## Next steps
 
-- refactor sh scripts for vms?
-
-
-1. Configure mysql on VM1 - DONE - RERUN on ansible / write script for win host (without latency)
-2. Configure postgress on VM2 - DONE - RERUN on ansible / write script for win host (without latency)
-4. Configure Microsoft SQL Server - DONE - RERUN on ansible / write script for win host (without latency) - REVIEW
+1. mysql on VM1 - DONE
+2. postgress on VM2 - DONE
+4. Microsoft SQL Server - DONE
 5. Docker mysql - DONE 
 6. Docker postgres - DONE 
 8. Docker MSSQL - DONE 
 
-[defaults]
-inventory = ./hosts
-callbacks_enabled = timer, profile_tasks, profile_roles
-
-add it ^
-
-
-SELECT * FROM  CUSTOMER ORDER BY first_name, last_name;
-
-add select 
-
-       |
-fix it v
-select f.title, count(r.rental_date)
-	from film as f
-	join inventory as i on i.film_id = f.film_id
-	join rental as r on r.inventory_id = i.inventory_id
-	group by f.title
-	order by count(r.rental_date) desc;\\
-
-
   "Memory": 4294967296,
-		"NanoCpus": 2000000000,
+	"NanoCpus": 2000000000,

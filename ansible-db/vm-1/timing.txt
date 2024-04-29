@@ -1,0 +1,77 @@
+TEST 1
+
+Elapsed time for INSERTING SCHEMA is 3.67 seconds.
+Elapsed time for INSERTING DATA is 754.06 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 1.02 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.96 seconds.
+Elapsed time for DELETING DATA is 12.90 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 3.38 seconds.
+
+TEST 2
+
+Elapsed time for INSERTING SCHEMA is 4.01 seconds.
+Elapsed time for INSERTING DATA is 674.75 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.94 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.83 seconds.
+Elapsed time for DELETING DATA is 6.99 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 2.51 seconds.
+
+TEST 3
+
+Elapsed time for INSERTING SCHEMA is 3.62 seconds.
+Elapsed time for INSERTING DATA is 680.05 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.93 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.86 seconds.
+Elapsed time for DELETING DATA is 4.48 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 2.51 seconds.
+
+TEST 4
+
+Elapsed time for ADDITIONAL: START VM1 is 40.09 seconds.
+Elapsed time for INSERTING SCHEMA is 3.53 seconds.
+Elapsed time for INSERTING DATA is 702.40 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.80 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.99 seconds.
+Elapsed time for DELETING DATA is 7.21 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 2.24 seconds.
+
+TEST 5
+
+Elapsed time for ADDITIONAL: START VM1 is 31.49 seconds.
+Elapsed time for INSERTING SCHEMA is 3.53 seconds.
+Elapsed time for INSERTING DATA is 710.67 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.94 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.84 seconds.
+Elapsed time for DELETING DATA is 4.28 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 2.57 seconds.
+
+TEST 6
+
+Elapsed time for ADDITIONAL: START VM1 is 32.45 seconds.
+Elapsed time for INSERTING SCHEMA is 3.65 seconds.
+Elapsed time for INSERTING DATA is 729.62 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.89 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.85 seconds.
+Elapsed time for DELETING DATA is 10.46 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 2.93 seconds.
+
+
+TEST 7
+
+Elapsed time for ADDITIONAL: START VM1 is 31.65 seconds.
+Elapsed time for INSERTING SCHEMA is 4.01 seconds.
+Elapsed time for INSERTING DATA is 707.09 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.83 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.92 seconds.
+Elapsed time for DELETING DATA is 11.52 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 3.37 seconds.
+
+TEST 8
+
+Elapsed time for ADDITIONAL: START VM1 is 38.05 seconds.
+Elapsed time for INSERTING SCHEMA is 5.61 seconds.
+Elapsed time for INSERTING DATA is 908.71 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 1.25 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 1.48 seconds.
+Elapsed time for DELETING DATA is 7.84 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 3.83 seconds.

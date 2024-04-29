@@ -30,7 +30,6 @@ DELETE FROM category ;
 DELETE FROM address;
 DELETE FROM city;
 ALTER TABLE store ALTER COLUMN manager_staff_id TINYINT NULL;
-update store set manager_staff_id=null;
 DELETE FROM staff ;
 DELETE FROM store ;
 DELETE FROM actor ;

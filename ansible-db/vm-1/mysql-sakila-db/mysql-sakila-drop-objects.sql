@@ -26,7 +26,6 @@ DROP TABLE address;
 DROP TABLE staff;
 DROP TABLE city;
 DROP TABLE country;
-ALTER TABLE staff DROP FOREIGN KEY fk_staff_store , DROP FOREIGN KEY fk_staff_address;
 
 
 -- Procedures and views

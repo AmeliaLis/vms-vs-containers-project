@@ -1,12 +1,12 @@
 TEST 1
 
-Elapsed time for ADDITIONAL: START VM2 is 42.88 seconds.
-Elapsed time for INSERTING SCHEMA is 2.74 seconds.
-Elapsed time for INSERTING DATA is 184.24 seconds.
-Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 1.38 seconds.
-Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.84 seconds.
-Elapsed time for DELETING DATA is 3.88 seconds.
-Elapsed time for DELETING OBJECTS IN SCHEMA is 1.02 seconds.
+Elapsed time for ADDITIONAL: START VM2 is 62.14 seconds.
+Elapsed time for INSERTING SCHEMA is 2.404 seconds.
+Elapsed time for INSERTING DATA is 172.02 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 1.16 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.85 seconds.
+Elapsed time for DELETING DATA is 6.60 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 1.18 seconds.
 
 TEST 2
 

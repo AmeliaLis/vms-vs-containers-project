@@ -53,7 +53,6 @@ Elapsed time for DELETING DATA is 4.432 seconds.
 Elapsed time for DELETING OBJECTS IN SCHEMA is 1.097 seconds.
 
 TEST 7
-BUILD DONE 451.8s
 Elapsed time for STARTING CONTAINER is 2.605 seconds.
 Elapsed time for INSERTING SCHEMA is 7.550 seconds.
 Elapsed time for INSERTING DATA is 585.169 seconds.
@@ -71,7 +70,6 @@ Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER
 Elapsed time for DELETING DATA is 3.596 seconds.
 Elapsed time for DELETING OBJECTS IN SCHEMA is 1.068 seconds.
 
-
 TEST 9
 Elapsed time for STARTING CONTAINER is 1.712 seconds.
 Elapsed time for INSERTING SCHEMA is 2.001 seconds.
@@ -82,10 +80,13 @@ Elapsed time for DELETING DATA is 4.821 seconds.
 Elapsed time for DELETING OBJECTS IN SCHEMA is 1.946 seconds.
 
 TEST 10
-
-Elapsed time for STARTING CONTAINER is 1.224 seconds.Changed database context to 'sakila'.
-Elapsed time for INSERTING SCHEMA is 1.996 seconds.Elapsed time for INSERTING DATA is 311.873 seconds.
+Elapsed time for STARTING CONTAINER is 1.224 seconds.
+Elapsed time for INSERTING SCHEMA is 1.996 seconds.
+Elapsed time for INSERTING DATA is 311.873 seconds.
 Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 2.095 seconds.
 Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 1.384 seconds.
 Elapsed time for DELETING DATA is 7.283 seconds.
 Elapsed time for DELETING OBJECTS IN SCHEMA is 3.225 seconds.
+
+PULL IMAGE/BUILD IMAGE:
+BUILD DONE 451.8s

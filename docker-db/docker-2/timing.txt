@@ -1,6 +1,5 @@
 TEST 1
 
-Elapsed time for PULLING POSTGRES IMAGE is 26.168 seconds.
 Elapsed time for STARTING CONTAINER is 2.859 seconds.
 Elapsed time for INSERTING SCHEMA is 1.873 seconds.
 Elapsed time for INSERTING DATA is 259.431 seconds.
@@ -10,7 +9,7 @@ Elapsed time for DELETING DATA is 3.836 seconds.
 Elapsed time for DROPING OBJECTS IN SCHEMA is 0.713 seconds.
 
 TEST 2
-Elapsed time for PULLING POSTGRES IMAGE is 2.205 seconds.
+
 Elapsed time for STARTING CONTAINER is 1.616 seconds.
 Elapsed time for INSERTING SCHEMA is 2.397 seconds.
 Elapsed time for INSERTING DATA is 177.682 seconds.
@@ -21,7 +20,7 @@ Elapsed time for DROPING OBJECTS IN SCHEMA is 1.019 seconds.
 
 
 TEST 3
-Elapsed time for PULLING POSTGRES IMAGE is 2.133 seconds.
+
 Elapsed time for STARTING CONTAINER is 2.491 seconds.
 Elapsed time for INSERTING SCHEMA is 3.435 seconds.
 Elapsed time for INSERTING DATA is 178.006 seconds.
@@ -31,7 +30,7 @@ Elapsed time for DELETING DATA is 4.140 seconds.
 Elapsed time for DROPING OBJECTS IN SCHEMA is 1.355 seconds.
 
 TEST 4
-Elapsed time for PULLING POSTGRES IMAGE is 2.212 seconds.
+
 Elapsed time for STARTING CONTAINER is 1.996 seconds.
 Elapsed time for INSERTING SCHEMA is 2.619 seconds.
 Elapsed time for INSERTING DATA is 178.920 seconds.
@@ -42,7 +41,7 @@ Elapsed time for DROPING OBJECTS IN SCHEMA is 1.010 seconds.
 
 
 TEST 6
-Elapsed time for PULLING POSTGRES IMAGE is 1.916 seconds.
+
 Elapsed time for STARTING CONTAINER is 1.917 seconds.
 Elapsed time for INSERTING SCHEMA is 2.945 seconds.
 Elapsed time for INSERTING DATA is 178.276 seconds.
@@ -52,7 +51,7 @@ Elapsed time for DELETING DATA is 4.020 seconds.
 Elapsed time for DROPING OBJECTS IN SCHEMA is 0.917 seconds.
 
 TEST 8
-Elapsed time for PULLING POSTGRES IMAGE is 24.140 seconds.
+
 Elapsed time for STARTING CONTAINER is 3.111 seconds.
 Elapsed time for INSERTING SCHEMA is 6.831 seconds.
 Elapsed time for INSERTING DATA is 226.061 seconds.
@@ -63,7 +62,6 @@ Elapsed time for DROPING OBJECTS IN SCHEMA is 0.732 seconds.
 
 TEST 9
 
-Elapsed time for PULLING POSTGRES IMAGE is 2.111 seconds.
 Elapsed time for STARTING CONTAINER is 2.221 seconds.
 Elapsed time for INSERTING SCHEMA is 4.508 seconds.
 Elapsed time for INSERTING DATA is 406.511 seconds.
@@ -74,7 +72,6 @@ Elapsed time for DROPING OBJECTS IN SCHEMA is 0.884 seconds.
 
 TEST 10
 
-Elapsed time for PULLING POSTGRES IMAGE is 3.096 seconds.
 Elapsed time for STARTING CONTAINER is 1.587 seconds.
 Elapsed time for INSERTING SCHEMA is 2.053 seconds.
 Elapsed time for INSERTING DATA is 182.382 seconds.
@@ -85,7 +82,6 @@ Elapsed time for DROPING OBJECTS IN SCHEMA is 0.725 seconds.
 
 TEST 11
 
-Elapsed time for PULLING POSTGRES IMAGE is 2.497 seconds.
 Elapsed time for STARTING CONTAINER is 2.560 seconds.
 Elapsed time for INSERTING SCHEMA is 3.486 seconds.
 Elapsed time for INSERTING DATA is 624.972 seconds.
@@ -97,7 +93,6 @@ Elapsed time for DROPING OBJECTS IN SCHEMA is 1.416 seconds.
 
 TEST 12
 
-Elapsed time for PULLING POSTGRES IMAGE is 2.970 seconds.
 Elapsed time for STARTING CONTAINER is 2.158 seconds.
 Elapsed time for INSERTING SCHEMA is 8.357 seconds.
 Elapsed time for INSERTING DATA is 178.512 seconds.
@@ -108,7 +103,6 @@ Elapsed time for DROPING OBJECTS IN SCHEMA is 0.889 seconds.
 
 TEST 13
 
-Elapsed time for PULLING POSTGRES IMAGE is 1.928 seconds.
 Elapsed time for STARTING CONTAINER is 2.257 seconds.
 Elapsed time for INSERTING SCHEMA is 3.211 seconds.
 Elapsed time for INSERTING DATA is 601.867 seconds.
@@ -120,7 +114,6 @@ Elapsed time for DROPING OBJECTS IN SCHEMA is 1.368 seconds.
 
 TEST 14
 
-Elapsed time for PULLING POSTGRES IMAGE is 1.963 seconds.
 Elapsed time for STARTING CONTAINER is 2.473 seconds.
 Elapsed time for INSERTING SCHEMA is 6.257 seconds.
 Elapsed time for INSERTING DATA is 619.831 seconds.
@@ -128,3 +121,9 @@ Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME
 Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 1.899 seconds.
 Elapsed time for DELETING DATA is 7.964 seconds.
 Elapsed time for DROPING OBJECTS IN SCHEMA is 1.172 seconds.
+
+
+PULL IMAGE/BUILD IMAGE:
+
+Elapsed time for PULLING POSTGRES IMAGE is 24.140 seconds.
+Elapsed time for PULLING POSTGRES IMAGE is 26.168 seconds.

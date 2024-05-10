@@ -122,8 +122,52 @@ Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER
 Elapsed time for DELETING DATA is 7.964 seconds.
 Elapsed time for DROPING OBJECTS IN SCHEMA is 1.172 seconds.
 
+TEST 15
+
+Elapsed time for STARTING CONTAINER is 3.757 seconds.
+Elapsed time for INSERTING SCHEMA is 2.186 seconds.
+Elapsed time for INSERTING DATA is 167.913 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.740 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.667 seconds.
+Elapsed time for DELETING DATA is 3.527 seconds.
+Elapsed time for DROPING OBJECTS IN SCHEMA is 0.725 seconds.
+
+TEST 16
+
+Elapsed time for STARTING CONTAINER is 2.045 seconds.
+Elapsed time for INSERTING SCHEMA is 1.844 seconds.
+Elapsed time for INSERTING DATA is 175.132 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.711 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.623 seconds.
+Elapsed time for DELETING DATA is 3.635 seconds.
+Elapsed time for DROPING OBJECTS IN SCHEMA is 0.778 seconds.
+
+TEST 17
+
+Elapsed time for STARTING CONTAINER is 1.664 seconds.
+Elapsed time for INSERTING SCHEMA is 1.811 seconds.
+Elapsed time for INSERTING DATA is 171.181 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.635 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.618 seconds.
+Elapsed time for DELETING DATA is 3.488 seconds.
+Elapsed time for DROPING OBJECTS IN SCHEMA is 0.723 seconds.
+
+TEST 18
+
+Elapsed time for STARTING CONTAINER is 1.603 seconds.
+Elapsed time for INSERTING SCHEMA is 2.278 seconds.
+Elapsed time for INSERTING DATA is 206.256 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.832 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.652 seconds.
+Elapsed time for DELETING DATA is 4.079 seconds.
+Elapsed time for DROPING OBJECTS IN SCHEMA is 0.883 seconds.
+
+
 
 PULL IMAGE/BUILD IMAGE:
 
 Elapsed time for PULLING POSTGRES IMAGE is 24.140 seconds.
 Elapsed time for PULLING POSTGRES IMAGE is 26.168 seconds.
+Elapsed time for PULLING POSTGRES IMAGE is 47.824 seconds.
+Elapsed time for PULLING POSTGRES IMAGE is 31.240 seconds.
+Elapsed time for PULLING POSTGRES IMAGE is 30.283 seconds.

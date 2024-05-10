@@ -88,5 +88,23 @@ Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER
 Elapsed time for DELETING DATA is 7.283 seconds.
 Elapsed time for DELETING OBJECTS IN SCHEMA is 3.225 seconds.
 
+TEST 11
+Elapsed time for STARTING CONTAINER is 0.913 seconds.
+Elapsed time for INSERTING SCHEMA is 2.286 seconds.
+Elapsed time for INSERTING DATA is 387.693 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 1.006 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.787 seconds.
+Elapsed time for DELETING DATA is 5.022 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 0.982 seconds.
+
+TEST 12
+Elapsed time for STARTING CONTAINER is 1.100 seconds.
+Elapsed time for INSERTING SCHEMA is 2.289 seconds.
+Elapsed time for INSERTING DATA is 338.930 seconds.
+Elapsed time for SELECTING DATA FROM CUSTOMER TABLE SORTED BY NAME AND LAST NAME is 0.997 seconds.
+Elapsed time for SELECTING THE MOST FREQUENTLY RENTED MOVIES IN DESCENDING ORDER is 0.839 seconds.
+Elapsed time for DELETING DATA is 3.456 seconds.
+Elapsed time for DELETING OBJECTS IN SCHEMA is 0.698 seconds.
+
 PULL IMAGE/BUILD IMAGE:
 BUILD DONE 451.8s

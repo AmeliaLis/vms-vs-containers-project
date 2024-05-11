@@ -1,4 +1,4 @@
-FROM mysql:latest
+FROM mysql:8.0.36
 
 # Copy the custom entrypoint script into the container
 COPY custom_entrypoint.sh /usr/local/bin/

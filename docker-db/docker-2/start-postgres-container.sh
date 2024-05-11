@@ -6,12 +6,12 @@ exec 1>>"$tmpfile" 2>&1
 
 TIMEFORMAT='Elapsed time for PULLING POSTGRES IMAGE is %R seconds.'
 {
-    time docker pull postgres:latest
+    time docker pull postgres:12.18
 }
 
 TIMEFORMAT='Elapsed time for STARTING CONTAINER is %R seconds.'
 {
-    time docker run --cpus="2" --memory=4096m -d --name postgres-container-test -e POSTGRES_USER=sakila -e POSTGRES_PASSWORD=admin123 -e POSTGRES_DB=sakila -v C:\\Users\\DELL\\Desktop\\licencjat\\bachelor\\docker-db\\docker-2\\postgres-sakila-db:/tmp/postgres-sakila-db postgres:latest
+    time docker run --cpus="2" --memory=4096m -d --name postgres-container-test -e POSTGRES_USER=sakila -e POSTGRES_PASSWORD=admin123 -e POSTGRES_DB=sakila -v C:\\Users\\DELL\\Desktop\\licencjat\\bachelor\\docker-db\\docker-2\\postgres-sakila-db:/tmp/postgres-sakila-db postgres:12.18
 }
 
 echo "Sleeping 20 seconds" 

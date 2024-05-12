@@ -117,7 +117,7 @@ df -h
 
 # MYSQL
 
-- https://dev.mysql.com/doc/mysql-installation-excerpt/8.3/en/docker-mysql-getting-started.html
+- https://dev.mysql.com/doc/mysql-installation-excerpt/8.3/en/linux-installation-apt-repo.html
 
 
 # POSTGRESSQL 

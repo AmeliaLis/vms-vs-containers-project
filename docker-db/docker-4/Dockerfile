@@ -25,5 +25,4 @@ EXPOSE 1433
 # Add SQL Server tools to the PATH
 RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 
-
 CMD ["/opt/mssql/bin/sqlservr"]

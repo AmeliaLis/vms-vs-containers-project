@@ -1,13 +1,7 @@
 #!/bin/bash
-# Specifying the format for the output of the 'time' command
 tmpfile="/c/Users/DELL/Desktop/licencjat/bachelor/docker-db/docker-2/temp_file.txt"
 
 exec 1>>"$tmpfile" 2>&1
-
-TIMEFORMAT='Elapsed time for PULLING POSTGRES IMAGE is %R seconds.'
-{
-    time docker pull postgres:12.18
-}
 
 TIMEFORMAT='Elapsed time for STARTING CONTAINER is %R seconds.'
 {
